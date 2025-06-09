@@ -23,7 +23,12 @@ const Text = styled.div`
 const Header = () => {
   return (
     <Wrapper>
-      <Image src={'/thumbnail-1.svg'} alt="asd" width={430} height={645} />
+      <Image
+        src={'/images/thumbnail-1.svg'}
+        alt="asd"
+        width={430}
+        height={645}
+      />
       {/* <Video src={'/video.MP4'} autoPlay loop playsInline /> */}
       <Text>WE GET MARRY</Text>
     </Wrapper>
