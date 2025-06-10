@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Image
-        src={'/images/thumbnail-1.svg'}
+        src={'/images/thumbnail-1.png'}
         alt="asd"
         width={430}
         height={645}
