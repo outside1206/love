@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 // import Video from 'next-video'
 import Image from 'next/image'
+import nextConfig from '../../next.config'
 
 const Wrapper = styled.div`
   position: relative;
@@ -21,12 +22,10 @@ const Text = styled.div`
 `
 
 const Header = () => {
-  console.log(process.env.NEXT_PUBLIC_BASE_PATH)
-
   return (
     <Wrapper>
       <Image
-        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/thumbnail-1.png`}
+        src={`${nextConfig.basePath}/images/thumbnail-1.png`}
         alt="asd"
         width={430}
         height={645}
