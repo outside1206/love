@@ -21,7 +21,7 @@ const Text = styled.div`
 `
 
 const Header = () => {
-  console.log(`${process.env.NEXT_PUBLIC_BASE_PATH}/images/thumbnail-1.png`)
+  console.log(process.env.NEXT_PUBLIC_BASE_PATH)
 
   return (
     <Wrapper>

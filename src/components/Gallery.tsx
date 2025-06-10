@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 const Wrapper = styled.div`
   padding: 40px 0;
@@ -58,30 +58,38 @@ const getRandomUniqueNumbers = (count: number, max: number): number[] => {
 }
 
 const Gallery = () => {
+  const [isClient, setIsClient] = useState(false)
+
   const imageNumbers = useMemo(() => getRandomUniqueNumbers(4, 34), [])
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   return (
     <Wrapper>
       <Title>GALLERY</Title>
-      <LinkArea href="/gallery">
-        <Container
-          onClick={() => {
-            console.log('123')
-          }}
-        >
-          {imageNumbers.map((num, idx) => (
-            <ImageWrapper key={num}>
-              <Image
-                src={`/images/gallery${num}.jpeg`}
-                alt={`gallery${num}`}
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-              {idx === 3 && <Overlay>사진 더 보기</Overlay>}
-            </ImageWrapper>
-          ))}
-        </Container>
-      </LinkArea>
+      {isClient && (
+        <LinkArea href="/gallery">
+          <Container
+            onClick={() => {
+              console.log('123')
+            }}
+          >
+            {imageNumbers.map((num, idx) => (
+              <ImageWrapper key={`index-gallery-${num}`}>
+                <Image
+                  src={`/images/gallery${num}.jpeg`}
+                  alt={`gallery${num}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+                {idx === 3 && <Overlay>사진 더 보기</Overlay>}
+              </ImageWrapper>
+            ))}
+          </Container>
+        </LinkArea>
+      )}
     </Wrapper>
   )
 }

@@ -69,15 +69,13 @@ const Calendar = () => {
           ))}
           {_2025_11_Weeks.map((headerOrWeek) => {
             return headerOrWeek.map((day, index) => (
-              <>
-                <CalendarCell
-                  key={`day-${day}-${index}`}
-                  isRed={!Boolean(index)}
-                  isTarget={day === '2025-11-22'}
-                >
-                  {day ? dayjs(day).format('D') : ''}
-                </CalendarCell>
-              </>
+              <CalendarCell
+                key={`day-${day}-${index}`}
+                isRed={!Boolean(index)}
+                isTarget={day === '2025-11-22'}
+              >
+                {day ? dayjs(day).format('D') : ''}
+              </CalendarCell>
             ))
           })}
         </CalendarWrapper>
