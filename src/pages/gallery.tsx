@@ -19,14 +19,11 @@ const Page = styled.div`
 const ImageWrapper = styled.div`
   width: 100%;
   margin-bottom: 10px;
+`
 
-  //   position: relative;
-  //   aspect-ratio: 4 / 3;
-
-  img {
-    width: 430px;
-    height: auto;
-  }
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: auto;
 `
 
 const GalleryPage = () => {
@@ -37,12 +34,12 @@ const GalleryPage = () => {
     <Page>
       {images.map((num) => (
         <ImageWrapper key={`gallery${num}`}>
-          <Image
+          <StyledImage
             src={`${nextConfig.basePath}/images/gallery${num}.jpeg`}
             alt={`gallery${num}`}
-            width={430} // Page의 max-width와 동일
-            height={9999} // placeholder, 실제 비율은 이미지 원본 비율에 따라 자동 조정됨
-            style={{ height: 'auto' }}
+            width={0}
+            height={0}
+            sizes="100vw"
           />
         </ImageWrapper>
       ))}

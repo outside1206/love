@@ -1,14 +1,11 @@
 import { _2025_11_Weeks } from '@/lib/constants'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
-// import dayjs from 'dayjs'
 
 const HEADERS = ['일', '월', '화', '수', '목', '금', '토']
 
 const Wrapper = styled.div`
   padding: 52px 0;
-
-  // border-top: 1px solid #eaeaea;
 `
 
 const Header = styled.div`

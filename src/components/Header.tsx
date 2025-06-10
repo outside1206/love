@@ -1,13 +1,11 @@
 import styled from '@emotion/styled'
-// import Video from 'next-video'
+
 import Image from 'next/image'
 import nextConfig from '../../next.config'
 
 const Wrapper = styled.div`
   position: relative;
 
-  width: 430px;
-  // height: 932px;
   overflow: hidden;
 `
 
@@ -21,16 +19,21 @@ const Text = styled.div`
   font-weight: bold;
 `
 
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: auto;
+`
+
 const Header = () => {
   return (
     <Wrapper>
-      <Image
+      <StyledImage
         src={`${nextConfig.basePath}/images/thumbnail-1.png`}
         alt="asd"
-        width={430}
-        height={645}
+        width={0}
+        height={0}
+        sizes="100vw"
       />
-      {/* <Video src={'/video.MP4'} autoPlay loop playsInline /> */}
       <Text>WE GET MARRY</Text>
     </Wrapper>
   )
