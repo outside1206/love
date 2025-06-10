@@ -50,7 +50,7 @@ const ButtonStyled = styled.a`
   border-radius: 10px;
   border: none;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
-  font-size: 14px;
+  font-size: 13px;
   color: #4e4c4b;
   cursor: pointer;
 
