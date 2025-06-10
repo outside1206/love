@@ -21,10 +21,12 @@ const Text = styled.div`
 `
 
 const Header = () => {
+  console.log(`${process.env.NEXT_PUBLIC_BASE_PATH}/images/thumbnail-1.png`)
+
   return (
     <Wrapper>
       <Image
-        src={'/images/thumbnail-1.png'}
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/thumbnail-1.png`}
         alt="asd"
         width={430}
         height={645}
