@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
+import nextConfig from '../../next.config'
 
 const Wrapper = styled.div`
   padding: 40px 0;
@@ -79,7 +80,7 @@ const Gallery = () => {
             {imageNumbers.map((num, idx) => (
               <ImageWrapper key={`index-gallery-${num}`}>
                 <Image
-                  src={`/images/gallery${num}.jpeg`}
+                  src={`${nextConfig.basePath}/images/gallery${num}.jpeg`}
                   alt={`gallery${num}`}
                   fill
                   style={{ objectFit: 'cover' }}

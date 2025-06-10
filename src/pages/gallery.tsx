@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import nextConfig from '../../next.config'
 
 const Page = styled.div`
   height: 100%;
@@ -37,7 +38,7 @@ const GalleryPage = () => {
       {images.map((num) => (
         <ImageWrapper key={`gallery${num}`}>
           <Image
-            src={`/images/gallery${num}.jpeg`}
+            src={`${nextConfig.basePath}/images/gallery${num}.jpeg`}
             alt={`gallery${num}`}
             width={430} // Page의 max-width와 동일
             height={9999} // placeholder, 실제 비율은 이미지 원본 비율에 따라 자동 조정됨

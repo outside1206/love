@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { useEffect, useState } from 'react'
 import NaverMaps from './NaverMap'
 import Image from 'next/image'
+import nextConfig from '../../next.config'
 
 const Wrapper = styled.div`
   padding: 40px 0;
@@ -132,7 +133,7 @@ const Location = () => {
           rel="noopener noreferrer"
         >
           <Image
-            src={'/navermaps.png'}
+            src={`${nextConfig.basePath}/images/navermaps.png`}
             alt="navermaps"
             width={20}
             height={20}
@@ -148,7 +149,7 @@ const Location = () => {
           rel="noopener noreferrer"
         >
           <Image
-            src={'/kakaomaps.png'}
+            src={`${nextConfig.basePath}/images/kakaomaps.png`}
             alt="kakaomaps"
             width={20}
             height={20}
@@ -156,7 +157,12 @@ const Location = () => {
           카카오맵
         </ButtonStyled>
         <ButtonStyled>
-          <Image src={'/tmap.jpeg'} alt="tmap" width={20} height={20} />
+          <Image
+            src={`${nextConfig.basePath}/images/tmap.jpeg`}
+            alt="tmap"
+            width={20}
+            height={20}
+          />
           티맵
         </ButtonStyled>
       </ButtonWrapper>
