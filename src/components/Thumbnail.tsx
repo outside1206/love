@@ -24,11 +24,11 @@ const StyledImage = styled(Image)`
   height: auto;
 `
 
-const Header = () => {
+const Thumbnail = () => {
   return (
     <Wrapper>
       <StyledImage
-        src={`${nextConfig.basePath}/images/thumbnail-1.png`}
+        src={`${nextConfig.basePath}/images/thumbnail1.png`}
         alt="asd"
         width={0}
         height={0}
@@ -39,4 +39,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Thumbnail

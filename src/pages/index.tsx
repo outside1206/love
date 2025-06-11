@@ -1,8 +1,8 @@
 import Attendance from '@/components/Attendance'
-import Calendar from '@/components/Calendar'
+import Schedule from '@/components/Schedule'
 import Gallery from '@/components/Gallery'
-import Header from '@/components/Header'
-import Intro from '@/components/Intro'
+import Thumbnail from '@/components/Thumbnail'
+import Greeting from '@/components/Greeting'
 import Location from '@/components/Location'
 import styled from '@emotion/styled'
 
@@ -22,9 +22,9 @@ const Page = styled.div`
 const Home = () => {
   return (
     <Page>
-      <Header />
-      <Intro />
-      <Calendar />
+      <Thumbnail />
+      <Greeting />
+      <Schedule />
       <Gallery />
       <Location />
       <Attendance />

@@ -50,7 +50,7 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
   ${({ isTarget }) => (isTarget ? 'background-color: #858585;' : '')}
 `
 
-const Calendar = () => {
+const Schedule = () => {
   return (
     <Wrapper>
       <Header>
@@ -81,4 +81,4 @@ const Calendar = () => {
   )
 }
 
-export default Calendar
+export default Schedule

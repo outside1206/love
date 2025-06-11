@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   background-color: #fffdf4;
 `
 
-const Intro = () => {
+const Greeting = () => {
   return <Wrapper>asdasd</Wrapper>
 }
-export default Intro
+export default Greeting
