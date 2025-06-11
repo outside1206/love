@@ -6,6 +6,7 @@ import nextConfig from '../../next.config'
 
 const Wrapper = styled.div`
   padding: 40px 0;
+
   background-color: #fffdf4;
 `
 
@@ -24,28 +25,32 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  gap: 4px;
 
+  gap: 4px;
   margin: 0 20px;
 `
 
 const ImageWrapper = styled.div`
-  position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
   max-width: 300px;
+
+  position: relative;
+  aspect-ratio: 4 / 3;
 `
 
 const Overlay = styled.div`
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  font-size: 18px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  inset: 0;
+
+  color: white;
+  font-size: 18px;
   font-size: 14px;
+
+  background-color: rgba(0, 0, 0, 0.4);
 `
 
 const getRandomUniqueNumbers = (count: number, max: number): number[] => {

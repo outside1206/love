@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 const Header = styled.div`
   display: flex;
   flex-direction: column;
+
   gap: 5px;
   margin-bottom: 30px;
 `
@@ -27,6 +28,7 @@ const SubTitle = styled.div`
 const LocationSection = styled.div`
   display: flex;
   flex-direction: column;
+
   gap: 5px;
   margin-bottom: 30px;
 `
@@ -34,24 +36,30 @@ const LocationSection = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
+
   margin: 0 17px;
   margin-top: 20px;
   gap: 10px;
 `
 
 const ButtonStyled = styled.a`
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
+
   gap: 6px;
   padding: 10px 14px;
-  background-color: #f6f7f9;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+
   font-size: 13px;
   color: #4e4c4b;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+  background-color: #f6f7f9;
+
+  border-radius: 10px;
+  border: none;
+
   cursor: pointer;
 
   &:hover {
@@ -62,9 +70,11 @@ const ButtonStyled = styled.a`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+
   margin: 30px 0;
   padding: 0 17px;
+  gap: 30px;
+
   color: #4e4c4b;
   font-size: 14px;
   text-align: left;
@@ -78,12 +88,14 @@ const Section = styled.div`
 const Method = styled.div`
   color: #2c3e50;
   font-weight: 600;
+
   margin-bottom: 10px;
 `
 
 const Paragraph = styled.p`
-  margin: 0;
   line-height: 1.6;
+
+  margin: 0;
   padding: 0 14px;
 `
 
@@ -92,18 +104,19 @@ const Highlight = styled.span`
 `
 
 const LineSpan = styled.span<{ color?: string }>`
-  padding: 3px 10px;
-  border-radius: 30px;
-  margin-right: 2px;
-
   ${({ color }) =>
     color &&
     `
-  background-color: ${color};
-  color: white;
-  
-  `}
+background-color: ${color};
+color: white;
+
+`}
   font-size: 10px;
+
+  padding: 3px 10px;
+  margin-right: 2px;
+
+  border-radius: 30px;
 `
 
 const Location = () => {

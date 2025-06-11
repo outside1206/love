@@ -10,9 +10,10 @@ const Wrapper = styled.div`
 `
 
 const Text = styled.div`
-  position: absolute;
   width: 100%;
   top: 10%;
+
+  position: absolute;
 
   color: white;
   font-size: 32px;
@@ -29,7 +30,7 @@ const Thumbnail = () => {
     <Wrapper>
       <StyledImage
         src={`${nextConfig.basePath}/images/thumbnail1.png`}
-        alt="asd"
+        alt="thumbnail"
         width={0}
         height={0}
         sizes="100vw"

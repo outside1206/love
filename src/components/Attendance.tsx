@@ -2,10 +2,11 @@ import styled from '@emotion/styled'
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 
 const Wrapper = styled.div`
-  padding: 60px 0;
-  background-color: #fffdf4;
-
   color: #4e4c4b;
+
+  padding: 60px 0;
+
+  background-color: #fffdf4;
 `
 
 const SubTitle = styled.div`
@@ -13,9 +14,9 @@ const SubTitle = styled.div`
 `
 
 const Title = styled.div`
-  margin-top: 10px;
-
   font-size: 18px;
+
+  margin-top: 10px;
 `
 
 const Header = styled.div`
@@ -30,9 +31,9 @@ const Body = styled.div`
 const HallInfo = styled.div`
   display: flex;
   flex-direction: column;
+
   margin: 60px 80px 0 80px;
   padding: 20px 0;
-
   gap: 5px;
 
   border-top: 1px dashed #4e4c4b;

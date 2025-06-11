@@ -22,6 +22,7 @@ const Title = styled.div`
 const CalendarContainer = styled.div`
   display: flex;
   justify-content: center;
+
   padding: 40px 20px 0 20px;
 `
 
@@ -34,20 +35,21 @@ const CalendarWrapper = styled.div`
 `
 
 const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   width: 24px;
   height: 24px;
 
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   font-size: 14px;
   color: #4e4c4b;
   ${({ isRed }) => (isRed ? 'color: #ea7653;' : '')}
   ${({ isTarget }) => (isTarget ? 'color: white;' : '')}
+  
   ${({ isTarget }) => (isTarget ? 'background-color: #858585;' : '')}
+  
+  border-radius: 50%;
 `
 
 const Schedule = () => {
