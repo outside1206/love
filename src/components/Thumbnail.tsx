@@ -29,7 +29,7 @@ const Thumbnail = () => {
   return (
     <Wrapper>
       <StyledImage
-        src={`${nextConfig.basePath}/images/thumbnail1.png`}
+        src={`${nextConfig.basePath}/images/thumbnail1.jpeg`}
         alt="thumbnail"
         width={0}
         height={0}

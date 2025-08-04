@@ -32,7 +32,7 @@ const HallInfo = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin: 60px 80px 0 80px;
+  margin: 60px 80px 60px 80px;
   padding: 20px 0;
   gap: 5px;
 
@@ -47,6 +47,38 @@ const HallInfoText = styled.div`
 
   font-size: 14px;
   color: #4e4c4b;
+`
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 32.5px;
+`
+
+const Button = styled.button`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px 0;
+  margin: 0;
+
+  background-color: #2c3e50;
+
+  border-width: 0px;
+  border-radius: 10px;
+  border: none;
+
+  color: white;
+
+  :enabled:active {
+    opacity: 0.8 !important;
+    transform: scale(0.98) !important;
+  }
 `
 
 const Attendance = () => {
@@ -73,6 +105,15 @@ const Attendance = () => {
           L65호텔웨딩컨벤션 컨벤션홀
         </HallInfoText>
       </HallInfo>
+      <ButtonWrapper>
+        <Button
+          onClick={() => {
+            window.open('/gallery')
+          }}
+        >
+          참석여부 전달하기
+        </Button>
+      </ButtonWrapper>
     </Wrapper>
   )
 }

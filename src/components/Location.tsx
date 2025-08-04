@@ -107,10 +107,10 @@ const LineSpan = styled.span<{ color?: string }>`
   ${({ color }) =>
     color &&
     `
-background-color: ${color};
-color: white;
+    background-color: ${color};
+    color: white;
 
-`}
+    `}
   font-size: 10px;
 
   padding: 3px 10px;
