@@ -56,6 +56,7 @@ const Schedule = () => {
   return (
     <Wrapper>
       <Header>
+        <Title>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</Title>
         <Title>2025년 11월 22일 토요일 오후 1시</Title>
         <Title>그대들을 초대합니다.</Title>
       </Header>
