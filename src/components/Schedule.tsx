@@ -16,7 +16,7 @@ const Header = styled.div`
 `
 
 const Title = styled.div`
-  color: #4e4c4b;
+  color: #e0e0e0;
 `
 
 const CalendarContainer = styled.div`
@@ -43,7 +43,7 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
   justify-content: center;
 
   font-size: 14px;
-  color: #4e4c4b;
+  color: #b0b0b0;
   ${({ isRed }) => (isRed ? 'color: #ea7653;' : '')}
   ${({ isTarget }) => (isTarget ? 'color: white;' : '')}
   

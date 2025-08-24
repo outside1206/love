@@ -17,11 +17,11 @@ const Header = styled.div`
 `
 
 const Title = styled.div`
-  color: #4e4c4b;
+  color: #e0e0e0;
 `
 
 const SubTitle = styled.div`
-  color: #4e4c4b;
+  color: #b0b0b0;
   font-size: 13px;
 `
 
@@ -75,7 +75,7 @@ const Info = styled.div`
   padding: 0 17px;
   gap: 30px;
 
-  color: #4e4c4b;
+  color: #b0b0b0;
   font-size: 14px;
   text-align: left;
 `
@@ -86,7 +86,7 @@ const Section = styled.div`
 `
 
 const Method = styled.div`
-  color: #2c3e50;
+  color: #e0e0e0;
   font-weight: 600;
 
   margin-bottom: 10px;

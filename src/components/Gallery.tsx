@@ -6,12 +6,10 @@ import GalleryModal from './GalleryModal'
 
 const Wrapper = styled.div`
   padding: 40px 0;
-
-  // background-color: #fffdf4;
 `
 
 const Title = styled.div`
-  color: #4e4c4b;
+  color: #e0e0e0;
 
   margin-bottom: 40px;
 `

@@ -5,16 +5,16 @@ const Wrapper = styled.div`
   color: #4e4c4b;
 
   padding: 60px 0;
-
-  // background-color: #fffdf4;
 `
 
 const SubTitle = styled.div`
   font-size: 12px;
+  color: #b0b0b0;
 `
 
 const Title = styled.div`
   font-size: 18px;
+  color: #e0e0e0;
 
   margin-top: 10px;
 `
@@ -24,7 +24,7 @@ const Header = styled.div`
 `
 
 const Body = styled.div`
-  color: #4e4c4b;
+  color: #b0b0b0;
   font-size: 13px;
 `
 
@@ -36,8 +36,8 @@ const HallInfo = styled.div`
   padding: 20px 0;
   gap: 5px;
 
-  border-top: 1px dashed #4e4c4b;
-  border-bottom: 1px dashed #4e4c4b;
+  border-top: 1px dashed #b0b0b0;
+  border-bottom: 1px dashed #b0b0b0;
 `
 
 const HallInfoText = styled.div`
@@ -46,7 +46,7 @@ const HallInfoText = styled.div`
   align-items: center;
 
   font-size: 14px;
-  color: #4e4c4b;
+  color: #b0b0b0;
 `
 
 const ButtonWrapper = styled.div`
