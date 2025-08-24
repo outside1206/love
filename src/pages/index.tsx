@@ -3,7 +3,7 @@ import Gallery from '@/components/Gallery'
 import Greeting from '@/components/Greeting'
 import Location from '@/components/Location'
 import Schedule from '@/components/Schedule'
-import Thumbnail from '@/components/Thumbnail'
+import Title from '@/components/Title'
 import styled from '@emotion/styled'
 
 const Page = styled.div`
@@ -16,13 +16,13 @@ const Page = styled.div`
   box-shadow: 0px 0px 18px rgb(0 0 0 / 10%);
   transition: filter 1s ease-out 0s;
 
-  background-color: white;
+  background-color: black;
 `
 
 const Home = () => {
   return (
     <Page>
-      <Thumbnail />
+      <Title />
       <Greeting />
       <Schedule />
       <Gallery />

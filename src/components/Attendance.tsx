@@ -6,7 +6,7 @@ const Wrapper = styled.div`
 
   padding: 60px 0;
 
-  background-color: #fffdf4;
+  // background-color: #fffdf4;
 `
 
 const SubTitle = styled.div`

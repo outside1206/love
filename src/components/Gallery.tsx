@@ -7,7 +7,7 @@ import GalleryModal from './GalleryModal'
 const Wrapper = styled.div`
   padding: 40px 0;
 
-  background-color: #fffdf4;
+  // background-color: #fffdf4;
 `
 
 const Title = styled.div`
@@ -31,16 +31,23 @@ const ImageWrapper = styled.div`
 `
 
 const Gallery = () => {
-  const imageNumbers = Array.from({ length: 12 }, (_, i) => i + 20)
+  // TODO: 이미지 정해지면 개선 필요
+  const limit = 12
+  const offset = 20
+  const imageNumbers = Array.from({ length: limit }, (_, i) => i + offset)
 
   const [open, setOpen] = useState<boolean>(false)
   const [selectImageNum, setSelectImageNum] = useState<number>(1)
 
   const onArrowClick = (direction: 'left' | 'right') => {
     if (direction === 'left') {
-      setSelectImageNum((prev) => (prev === 1 ? 12 : prev - 1))
+      setSelectImageNum((prev) =>
+        prev === offset ? offset + limit - 1 : prev - 1,
+      )
     } else {
-      setSelectImageNum((prev) => (prev === 12 ? 1 : prev + 1))
+      setSelectImageNum((prev) =>
+        prev === offset + limit - 1 ? offset : prev + 1,
+      )
     }
   }
 
