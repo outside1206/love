@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
       ncpKeyId={process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID as string}
     >
       <Component {...pageProps} />
+      <div id="global-modal"></div>
     </NavermapsProvider>
   )
 }

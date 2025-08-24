@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
 import nextConfig from '../../next.config'
+import GalleryModal from './GalleryModal'
 
 const Wrapper = styled.div`
   padding: 40px 0;
@@ -16,18 +16,10 @@ const Title = styled.div`
   margin-bottom: 40px;
 `
 
-const LinkArea = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-`
-
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-
-  gap: 4px;
-  margin: 0 20px;
 `
 
 const ImageWrapper = styled.div`
@@ -35,64 +27,55 @@ const ImageWrapper = styled.div`
   max-width: 300px;
 
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
 `
-
-const Overlay = styled.div`
-  position: absolute;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  inset: 0;
-
-  color: white;
-  font-size: 18px;
-  font-size: 14px;
-
-  background-color: rgba(0, 0, 0, 0.4);
-`
-
-const getRandomUniqueNumbers = (count: number, max: number): number[] => {
-  const nums = new Set<number>()
-  while (nums.size < count) {
-    nums.add(Math.floor(Math.random() * max) + 1)
-  }
-  return Array.from(nums)
-}
 
 const Gallery = () => {
-  const [isClient, setIsClient] = useState(false)
+  const imageNumbers = Array.from({ length: 12 }, (_, i) => i + 20)
 
-  const imageNumbers = useMemo(() => getRandomUniqueNumbers(4, 34), [])
+  const [open, setOpen] = useState<boolean>(false)
+  const [selectImageNum, setSelectImageNum] = useState<number>(1)
 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+  const onArrowClick = (direction: 'left' | 'right') => {
+    if (direction === 'left') {
+      setSelectImageNum((prev) => (prev === 1 ? 12 : prev - 1))
+    } else {
+      setSelectImageNum((prev) => (prev === 12 ? 1 : prev + 1))
+    }
+  }
 
   return (
     <Wrapper>
-      <Title>GALLERY</Title>
-      {isClient && (
-        <LinkArea href="/gallery">
-          <Container
-            onClick={() => {
-              console.log('123')
-            }}
-          >
-            {imageNumbers.map((num, idx) => (
-              <ImageWrapper key={`index-gallery-${num}`}>
-                <Image
-                  src={`${nextConfig.basePath}/images/gallery${num}.jpeg`}
-                  alt={`gallery${num}`}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-                {idx === 3 && <Overlay>사진 더 보기</Overlay>}
-              </ImageWrapper>
-            ))}
-          </Container>
-        </LinkArea>
+      <Title
+        onClick={() => {
+          setOpen(true)
+        }}
+      >
+        GALLERY
+      </Title>
+      <Container>
+        {imageNumbers.map((num) => (
+          <ImageWrapper key={`index-gallery-${num}`}>
+            <Image
+              src={`${nextConfig.basePath}/images/gallery${num}.jpeg`}
+              alt={`gallery${num}`}
+              fill
+              style={{ objectFit: 'cover' }}
+              onClick={() => {
+                setSelectImageNum(num)
+                setOpen(true)
+              }}
+            />
+          </ImageWrapper>
+        ))}
+      </Container>
+      {open && (
+        <GalleryModal
+          open={open}
+          onClose={() => setOpen(false)}
+          imageNum={selectImageNum}
+          onArrowClick={onArrowClick}
+        />
       )}
     </Wrapper>
   )

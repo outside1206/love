@@ -1,9 +1,9 @@
 import Attendance from '@/components/Attendance'
-import Schedule from '@/components/Schedule'
 import Gallery from '@/components/Gallery'
-import Thumbnail from '@/components/Thumbnail'
 import Greeting from '@/components/Greeting'
 import Location from '@/components/Location'
+import Schedule from '@/components/Schedule'
+import Thumbnail from '@/components/Thumbnail'
 import styled from '@emotion/styled'
 
 const Page = styled.div`
