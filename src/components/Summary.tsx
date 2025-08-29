@@ -8,7 +8,8 @@ const Wrapper = styled.div`
   // border: 1px solid red;
 `
 
-const Greeting = () => {
-  return <Wrapper>초대, 인사말, 우리 소개 및 손글씨</Wrapper>
+const Summary = () => {
+  return <Wrapper>간단하게 날짜 요일 시간, 장소</Wrapper>
 }
-export default Greeting
+
+export default Summary

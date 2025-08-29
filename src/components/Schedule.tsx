@@ -6,6 +6,8 @@ const HEADERS = ['일', '월', '화', '수', '목', '금', '토']
 
 const Wrapper = styled.div`
   padding: 52px 0;
+
+  // border: 1px solid red;
 `
 
 const Header = styled.div`

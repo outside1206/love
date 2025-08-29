@@ -8,7 +8,7 @@ import { VscClose, VscArrowLeft, VscArrowRight } from 'react-icons/vsc'
 interface GalleryModalProps {
   open: boolean
   onClose: () => void
-  imageNum: number
+  imageNum: string
   onArrowClick: (direction: 'left' | 'right') => void
 }
 

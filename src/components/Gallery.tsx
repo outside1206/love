@@ -1,84 +1,105 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
+import GalleryRowType from './public/GalleryRowType'
 import { useState } from 'react'
-import nextConfig from '../../next.config'
 import GalleryModal from './GalleryModal'
 
 const Wrapper = styled.div`
-  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+
+  gap: 12px;
+
+  // border: 1px solid red;
 `
-
-const Title = styled.div`
-  color: #e0e0e0;
-
-  margin-bottom: 40px;
-`
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-`
-
-const ImageWrapper = styled.div`
-  width: 100%;
-  max-width: 300px;
-
-  position: relative;
-  aspect-ratio: 3 / 4;
-`
-
 const Gallery = () => {
-  // TODO: 이미지 정해지면 개선 필요
-  const limit = 12
-  const offset = 20
-  const imageNumbers = Array.from({ length: limit }, (_, i) => i + offset)
+  const images = [
+    '2',
+    '3',
+    '31',
+    '32',
+    '23',
+    '22',
+    '1',
+    '11',
+    '12',
+    '33',
+    '34',
+    '13',
+    '14',
+    '15',
+    '36',
+    '24',
+    '26',
+    '27',
+  ]
 
   const [open, setOpen] = useState<boolean>(false)
-  const [selectImageNum, setSelectImageNum] = useState<number>(1)
+
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0)
 
   const onArrowClick = (direction: 'left' | 'right') => {
     if (direction === 'left') {
-      setSelectImageNum((prev) =>
-        prev === offset ? offset + limit - 1 : prev - 1,
+      setSelectedImageIndex((prev) =>
+        prev === 0 ? images.length - 1 : prev - 1,
       )
     } else {
-      setSelectImageNum((prev) =>
-        prev === offset + limit - 1 ? offset : prev + 1,
+      setSelectedImageIndex((prev) =>
+        prev === images.length - 1 ? 0 : prev + 1,
       )
     }
   }
 
+  const onClickImage = (image: string) => {
+    setSelectedImageIndex(images.indexOf(image))
+    setOpen(true)
+  }
+
   return (
     <Wrapper>
-      <Title
-        onClick={() => {
-          setOpen(true)
-        }}
-      >
-        GALLERY
-      </Title>
-      <Container>
-        {imageNumbers.map((num) => (
-          <ImageWrapper key={`index-gallery-${num}`}>
-            <Image
-              src={`${nextConfig.basePath}/images/gallery${num}.jpeg`}
-              alt={`gallery${num}`}
-              fill
-              style={{ objectFit: 'cover' }}
-              onClick={() => {
-                setSelectImageNum(num)
-                setOpen(true)
-              }}
-            />
-          </ImageWrapper>
-        ))}
-      </Container>
+      <GalleryRowType
+        type={2}
+        tall1="2"
+        tall2="3"
+        wide1="31"
+        wide2="32"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="23"
+        tall2="22"
+        tall3="1"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={1}
+        tall1="11"
+        tall2="12"
+        wide1="33"
+        wide2="34"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="13"
+        tall2="14"
+        tall3="15"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={3}
+        tall1="36"
+        tall2="24"
+        wide1="26"
+        wide2="27"
+        onClickImage={onClickImage}
+      />
       {open && (
         <GalleryModal
           open={open}
           onClose={() => setOpen(false)}
-          imageNum={selectImageNum}
+          imageNum={images[selectedImageIndex]}
           onArrowClick={onArrowClick}
         />
       )}

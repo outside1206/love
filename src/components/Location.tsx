@@ -6,6 +6,8 @@ import nextConfig from '../../next.config'
 
 const Wrapper = styled.div`
   padding: 40px 0;
+
+  // border: 1px solid red;
 `
 
 const Header = styled.div`

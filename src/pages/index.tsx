@@ -3,6 +3,7 @@ import Gallery from '@/components/Gallery'
 import Greeting from '@/components/Greeting'
 import Location from '@/components/Location'
 import Schedule from '@/components/Schedule'
+import Summary from '@/components/Summary'
 import Title from '@/components/Title'
 import styled from '@emotion/styled'
 
@@ -23,9 +24,10 @@ const Home = () => {
   return (
     <Page>
       <Title />
+      <Summary />
       <Greeting />
-      <Schedule />
       <Gallery />
+      <Schedule />
       <Location />
       <Attendance />
     </Page>
