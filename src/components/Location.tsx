@@ -197,27 +197,7 @@ const Location = () => {
 
         <Section>
           <Method>버스</Method>
-          <Paragraph>
-            <LineSpan color="#386de8">간선버스</LineSpan> 105, 120, 121, 147,
-            202, 241, 260, 261, 270, 271, 272, 420, 720
-          </Paragraph>
-          <Paragraph>
-            <LineSpan color="#3cc344">지선버스</LineSpan> 1213, 1222, 1224,
-            1227, 2115, 2230, 3216, 3220
-          </Paragraph>
-          <Paragraph>
-            <LineSpan color="#3d9e9e">일반버스</LineSpan> 51, 65, 166, 170, 707
-          </Paragraph>
-          <Paragraph>
-            <LineSpan color="#8841d2">좌석버스</LineSpan> 330-1
-          </Paragraph>
-          <Paragraph>
-            <LineSpan color="#fb5852">직행버스</LineSpan> 1330-2, 1330-3,
-            1330-4, 1330-44, 3200, 8005
-          </Paragraph>
-          <Paragraph>
-            <LineSpan color="#65a6d2">공항버스</LineSpan> 6002
-          </Paragraph>
+          <Paragraph>청량리역 환승센터 하차</Paragraph>
         </Section>
 
         <Section>
