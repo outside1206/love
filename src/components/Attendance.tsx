@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
-import { FormEvent } from 'react'
+import { useState } from 'react'
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
+import AttendanceModal from './AttendanceModal'
 
 const Wrapper = styled.div`
   color: #4e4c4b;
@@ -84,26 +85,7 @@ const Button = styled.button`
   }
 `
 const Attendance = () => {
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-
-    const formData = new FormData()
-
-    formData.append(
-      `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_1}`,
-      '참석합니다.',
-    )
-    formData.append(
-      `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_2}`,
-      '하이요',
-    )
-
-    await fetch(`${process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}`, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors',
-    })
-  }
+  const [open, setOpen] = useState<boolean>(false)
 
   return (
     <Wrapper>
@@ -128,20 +110,16 @@ const Attendance = () => {
           L65호텔웨딩컨벤션 컨벤션홀
         </HallInfoText>
       </HallInfo>
-      <form onSubmit={handleSubmit}>
-        <ButtonWrapper>
-          <Button
-            type="submit"
-            // onClick={() => {
-            //   window.open(
-            //     'https://docs.google.com/forms/d/1soQiWpm8IvwSuwyCixqlF3eH-qFo4aSb0D07Ka5pyaY/edit',
-            //   )
-            // }}
-          >
-            참석여부 전달하기
-          </Button>
-        </ButtonWrapper>
-      </form>
+      <ButtonWrapper>
+        <Button
+          onClick={() => {
+            setOpen(true)
+          }}
+        >
+          구글 폼 참석여부 전달하기
+        </Button>
+      </ButtonWrapper>
+      {open && <AttendanceModal open={open} onClose={() => setOpen(false)} />}
     </Wrapper>
   )
 }
