@@ -116,7 +116,7 @@ const Attendance = () => {
             setOpen(true)
           }}
         >
-          구글 폼 참석여부 전달하기
+          참석여부 전달하기
         </Button>
       </ButtonWrapper>
       {open && <AttendanceModal open={open} onClose={() => setOpen(false)} />}

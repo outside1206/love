@@ -182,6 +182,8 @@ const AttendanceModal = ({ open, onClose }: AttendanceModalProps) => {
       body: formData,
       mode: 'no-cors',
     })
+
+    onClose()
   }
 
   return (
