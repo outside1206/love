@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react'
 import NaverMaps from './NaverMap'
 import Image from 'next/image'
 import nextConfig from '../../next.config'
+import { motion } from 'framer-motion'
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   padding: 40px 0;
 
   // border: 1px solid red;
@@ -129,7 +130,12 @@ const Location = () => {
   }, [])
 
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
       <Header>
         <SubTitle>LOCATION</SubTitle>
         <Title>오시는 길</Title>

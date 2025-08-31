@@ -1,10 +1,11 @@
 import { _2025_11_Weeks } from '@/lib/constants'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
+import { motion } from 'framer-motion'
 
 const HEADERS = ['일', '월', '화', '수', '목', '금', '토']
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   padding: 52px 0;
 
   // border: 1px solid red;
@@ -56,7 +57,12 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
 
 const Schedule = () => {
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
       <Header>
         <Title>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</Title>
         <Title>2025년 11월 22일 토요일 오후 1시</Title>

@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 import GalleryRowType from './public/GalleryRowType'
 import { useState } from 'react'
 import GalleryModal from './GalleryModal'
+import { motion } from 'framer-motion'
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   padding: 0 10px;
@@ -56,7 +57,12 @@ const Gallery = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
       <GalleryRowType
         type={2}
         tall1="2"

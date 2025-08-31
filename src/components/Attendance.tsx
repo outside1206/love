@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 import { useState } from 'react'
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import AttendanceModal from './AttendanceModal'
+import { motion } from 'framer-motion'
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   color: #4e4c4b;
 
   padding: 60px 0;
@@ -88,7 +89,12 @@ const Attendance = () => {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
       <Header>
         <SubTitle>SAVE THE DATE</SubTitle>
         <Title>참석 여부를 전달해주세요</Title>

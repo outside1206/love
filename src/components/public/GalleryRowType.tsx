@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
-import nextConfig from '../../../next.config'
+import { motion } from 'framer-motion'
 import NextImage from 'next/image'
+import nextConfig from '../../../next.config'
 
 interface GalleryRowTypeProps {
   type: 1 | 2 | 3 | 4
@@ -12,7 +13,7 @@ interface GalleryRowTypeProps {
   onClickImage: (image: string) => void
 }
 
-const Row = styled.div<{ type: 1 | 2 | 3 | 4 }>`
+const Row = styled(motion.div)<{ type: 1 | 2 | 3 | 4 }>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* 3칸 */
   grid-template-rows: repeat(2, 80px); /* 2행 */
@@ -67,7 +68,13 @@ const GalleryRowType = ({
   onClickImage,
 }: GalleryRowTypeProps) => {
   return (
-    <Row type={type}>
+    <Row
+      type={type}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
       <TallWrapper area="tall1" onClick={() => onClickImage(tall1)}>
         <Image
           src={`${nextConfig.basePath}/images/gallery${tall1}.jpeg`}
