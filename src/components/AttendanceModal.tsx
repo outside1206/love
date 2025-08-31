@@ -29,9 +29,14 @@ const Button = styled.button`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  margin: 0 20px;
 `
 
 const ContentWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
+
   display: flex;
   flex-direction: column;
 
@@ -54,8 +59,8 @@ const Title = styled.div`
 
 const Row = styled.div`
   display: grid;
-  //   grid-template-columns: 1fr 3fr;
-  grid-template-columns: 100px 300px;
+  grid-template-columns: 1fr 3fr;
+
   gap: 10px;
 
   padding: 10px 0;
@@ -102,7 +107,7 @@ const SideButton = styled(Button)<{
 const Input = styled.input`
   outline: none;
 
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 0;
 
   background: #f9f9f9;
