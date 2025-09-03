@@ -43,6 +43,20 @@ const ButtonWrapper = styled.div`
   margin: 0 17px;
   margin-top: 20px;
   gap: 10px;
+
+  /* 390px 이하에서 가로 여유 조금 더 확보 */
+  @media (max-width: 390px) {
+    margin: 0 12px;
+    margin-top: 18px;
+    gap: 6px;
+  }
+
+  /* 360px 이하(아주 좁은 단말) */
+  @media (max-width: 360px) {
+    margin: 0 8px;
+    margin-top: 16px;
+    gap: 4px;
+  }
 `
 
 const ButtonStyled = styled.a`
@@ -65,8 +79,39 @@ const ButtonStyled = styled.a`
 
   cursor: pointer;
 
+  /* 줄바꿈 방지 (한 줄 유지) */
+  white-space: nowrap;
+  word-break: keep-all;
+
+  /* 버튼 자체가 너무 찌그러지지 않도록 최소폭 살짝 확보 (선택) */
+  min-width: 96px;
+
   &:hover {
     background-color: #e9ebee;
+  }
+
+  /* 390px 이하: 패딩만 살짝 축소 */
+  @media (max-width: 390px) {
+    padding: 8px 10px;
+  }
+
+  /* 360px 이하: 더 타이트하게 */
+  @media (max-width: 360px) {
+    padding: 6px 8px;
+  }
+`
+
+const Icon = styled(Image)`
+  width: 20px;
+  height: 20px;
+
+  @media (max-width: 390px) {
+    width: 18px;
+    height: 18px;
+  }
+  @media (max-width: 360px) {
+    width: 16px;
+    height: 16px;
   }
 `
 
@@ -153,7 +198,7 @@ const Location = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
+          <Icon
             src={`${nextConfig.basePath}/images/raws/navermaps.png`}
             alt="navermaps"
             width={20}
@@ -169,7 +214,7 @@ const Location = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
+          <Icon
             src={`${nextConfig.basePath}/images/raws/kakaomaps.png`}
             alt="kakaomaps"
             width={20}
@@ -178,7 +223,7 @@ const Location = () => {
           카카오맵
         </ButtonStyled>
         <ButtonStyled>
-          <Image
+          <Icon
             src={`${nextConfig.basePath}/images/raws/tmap.jpeg`}
             alt="tmap"
             width={20}
