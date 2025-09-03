@@ -5,8 +5,6 @@ import { motion } from 'framer-motion'
 
 const Wrapper = styled(motion.div)`
   position: relative;
-
-  // overflow: hidden;
 `
 
 const StyledImage = styled(Image)`
