@@ -154,7 +154,7 @@ const Location = () => {
           rel="noopener noreferrer"
         >
           <Image
-            src={`${nextConfig.basePath}/images/navermaps.png`}
+            src={`${nextConfig.basePath}/images/raws/navermaps.png`}
             alt="navermaps"
             width={20}
             height={20}
@@ -170,7 +170,7 @@ const Location = () => {
           rel="noopener noreferrer"
         >
           <Image
-            src={`${nextConfig.basePath}/images/kakaomaps.png`}
+            src={`${nextConfig.basePath}/images/raws/kakaomaps.png`}
             alt="kakaomaps"
             width={20}
             height={20}
@@ -179,7 +179,7 @@ const Location = () => {
         </ButtonStyled>
         <ButtonStyled>
           <Image
-            src={`${nextConfig.basePath}/images/tmap.jpeg`}
+            src={`${nextConfig.basePath}/images/raws/tmap.jpeg`}
             alt="tmap"
             width={20}
             height={20}

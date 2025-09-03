@@ -15,6 +15,8 @@ const basePath = nextConfig.basePath ?? ''
 
 export default function Title() {
   const sizes = '(max-width: 430px) 100vw, 430px'
+  console.log(`${basePath}/images/converted/title-430.webp 430w`)
+
   return (
     <Wrapper
       initial={{ opacity: 0 }}
