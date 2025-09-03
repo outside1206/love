@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
+import nextConfig from '../../next.config'
 
 const Wrapper = styled(motion.div)`
   position: relative;
@@ -10,7 +11,7 @@ const Wrapper = styled(motion.div)`
   margin: 0 auto;
 `
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '' // GH Pages면 '/repo'
+const basePath = nextConfig.basePath ?? ''
 
 export default function Title() {
   const sizes = '(max-width: 430px) 100vw, 430px'
@@ -42,7 +43,7 @@ export default function Title() {
           ].join(', ')}
           sizes={sizes}
         />
-        {/* 폴백(최소 한 장은 jpg/png) */}
+
         <img
           src={`${basePath}/images/raws/title.jpeg`}
           alt="title"
