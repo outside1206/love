@@ -1,35 +1,59 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
-import nextConfig from '../../next.config'
 import { motion } from 'framer-motion'
 
 const Wrapper = styled(motion.div)`
   position: relative;
-`
-
-const StyledImage = styled(Image)`
   width: 100%;
-  height: auto;
+  /* 비율 고정으로 CLS 방지 (가로/세로) */
+  aspect-ratio: 1625 / 2438;
+  max-width: 430px; /* Page가 이미 430px이면 없어도 OK */
+  margin: 0 auto;
 `
 
-const Title = () => {
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '' // GH Pages면 '/repo'
+
+export default function Title() {
+  const sizes = '(max-width: 430px) 100vw, 430px'
   return (
     <Wrapper
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <StyledImage
-        src={`${nextConfig.basePath}/images/title.jpeg`}
-        alt="title"
-        width={0}
-        height={0}
-        sizes="100vw"
-        priority
-      />
+      <picture>
+        <source
+          type="image/avif"
+          srcSet={[
+            `${basePath}/images/converted/title-430.avif 430w`,
+            `${basePath}/images/converted/title-860.avif 860w`,
+            `${basePath}/images/converted/title-1290.avif 1290w`,
+            `${basePath}/images/converted/title-1625.avif 1625w`,
+          ].join(', ')}
+          sizes={sizes}
+        />
+        <source
+          type="image/webp"
+          srcSet={[
+            `${basePath}/images/converted/title-430.webp 430w`,
+            `${basePath}/images/converted/title-860.webp 860w`,
+            `${basePath}/images/converted/title-1290.webp 1290w`,
+            `${basePath}/images/converted/title-1625.webp 1625w`,
+          ].join(', ')}
+          sizes={sizes}
+        />
+        {/* 폴백(최소 한 장은 jpg/png) */}
+        <img
+          src={`${basePath}/images/raws/title.jpeg`}
+          alt="title"
+          width={430}
+          height={645}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+        />
+      </picture>
     </Wrapper>
   )
 }
-
-export default Title

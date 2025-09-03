@@ -77,7 +77,7 @@ const GalleryModal = ({
         </Button>
         <ImageWrapper aspectRatio={aspectRatio}>
           <Image
-            src={`${nextConfig.basePath}/images/gallery${imageNum}.jpeg`}
+            src={`${nextConfig.basePath}/images/raws/gallery${imageNum}.jpeg`}
             alt={`gallery${imageNum}`}
             fill
             style={{ objectFit: 'contain' }}

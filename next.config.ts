@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    deviceSizes: [360, 480, 640, 750, 828, 1080],
+    deviceSizes: [430, 860, 1290, 1625],
   },
   output: 'export',
   basePath: isProd ? '/love' : '',

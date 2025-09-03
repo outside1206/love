@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
-import NextImage from 'next/image'
 import nextConfig from '../../../next.config'
 
 interface GalleryRowTypeProps {
@@ -30,18 +29,19 @@ const Row = styled(motion.div)<{ type: 1 | 2 | 3 | 4 }>`
   gap: 12px;
 `
 
-const Image = styled(NextImage)`
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
 `
 
 const TallWrapper = styled.div<{ area: string }>`
   position: relative;
   width: 100%;
   height: 100%;
-  aspect-ratio: 2/3;
-
-  grid-area: ${(props) => props.area};
-
+  aspect-ratio: 2 / 3;
+  grid-area: ${(p) => p.area};
   border-radius: 12px;
   overflow: hidden;
 `
@@ -50,14 +50,43 @@ const WideWrapper = styled.div<{ area: string }>`
   position: relative;
   width: 100%;
   height: 100%;
-  aspect-ratio: 4/3;
-
-  grid-area: ${(props) => props.area};
-
+  aspect-ratio: 4 / 3;
+  grid-area: ${(p) => p.area};
   border-radius: 12px;
   overflow: hidden;
 `
 
+const PictureThumb = ({
+  baseName,
+  alt,
+  sizes,
+}: {
+  baseName: string
+  alt: string
+  sizes: string
+}) => {
+  const bp = nextConfig.basePath ?? ''
+  const srcsetWebp = [
+    `${bp}/images/converted/${baseName}-430.webp 430w`,
+    `${bp}/images/converted/${baseName}-860.webp 860w`,
+    `${bp}/images/converted/${baseName}-1290.webp 1290w`,
+    `${bp}/images/converted/${baseName}-1625.webp 1625w`,
+  ].join(', ')
+
+  return (
+    <picture>
+      <source type="image/webp" srcSet={srcsetWebp} sizes={sizes} />
+      <Img
+        src={`${bp}/images/converted/${baseName}.jpeg`}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  )
+}
+
+/** 갤러리 한 줄 */
 const GalleryRowType = ({
   type,
   tall1,
@@ -67,6 +96,8 @@ const GalleryRowType = ({
   tall3,
   onClickImage,
 }: GalleryRowTypeProps) => {
+  const THUMB_SIZES = '(max-width: 430px) calc((100vw - 24px)/3), 135px'
+
   return (
     <Row
       type={type}
@@ -76,47 +107,47 @@ const GalleryRowType = ({
       viewport={{ once: true }}
     >
       <TallWrapper area="tall1" onClick={() => onClickImage(tall1)}>
-        <Image
-          src={`${nextConfig.basePath}/images/gallery${tall1}.jpeg`}
+        <PictureThumb
+          baseName={`gallery${tall1}`}
           alt={`gallery${tall1}`}
-          fill
+          sizes={THUMB_SIZES}
         />
       </TallWrapper>
 
       <TallWrapper area="tall2" onClick={() => onClickImage(tall2)}>
-        <Image
-          src={`${nextConfig.basePath}/images/gallery${tall2}.jpeg`}
+        <PictureThumb
+          baseName={`gallery${tall2}`}
           alt={`gallery${tall2}`}
-          fill
+          sizes={THUMB_SIZES}
         />
       </TallWrapper>
 
       {wide1 && (
         <WideWrapper area="wide1" onClick={() => onClickImage(wide1)}>
-          <Image
-            src={`${nextConfig.basePath}/images/gallery${wide1}.jpeg`}
+          <PictureThumb
+            baseName={`gallery${wide1}`}
             alt={`gallery${wide1}`}
-            fill
+            sizes={THUMB_SIZES}
           />
         </WideWrapper>
       )}
 
       {wide2 && (
         <WideWrapper area="wide2" onClick={() => onClickImage(wide2)}>
-          <Image
-            src={`${nextConfig.basePath}/images/gallery${wide2}.jpeg`}
+          <PictureThumb
+            baseName={`gallery${wide2}`}
             alt={`gallery${wide2}`}
-            fill
+            sizes={THUMB_SIZES}
           />
         </WideWrapper>
       )}
 
       {tall3 && (
         <TallWrapper area="tall3" onClick={() => onClickImage(tall3)}>
-          <Image
-            src={`${nextConfig.basePath}/images/gallery${tall3}.jpeg`}
+          <PictureThumb
+            baseName={`gallery${tall3}`}
             alt={`gallery${tall3}`}
-            fill
+            sizes={THUMB_SIZES}
           />
         </TallWrapper>
       )}
