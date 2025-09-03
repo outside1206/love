@@ -7,8 +7,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>My App</title>
-        <meta name="description" content="This is my app" />
+        <title>상가 커플 결혼식에 초대하겠습니다.</title>
+        <meta name="description" content="come come" />
       </Head>
 
       <NavermapsProvider
