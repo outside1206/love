@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import nextConfig from '../../next.config'
 
 const Wrapper = styled(motion.div)`
   padding: 60px 0;
@@ -18,6 +20,8 @@ const Title = styled.div`
 `
 
 const Greeting = () => {
+  const basePath = nextConfig.basePath ?? ''
+
   return (
     <Wrapper
       initial={{ opacity: 0 }}
@@ -26,7 +30,12 @@ const Greeting = () => {
       viewport={{ once: true }}
     >
       <Title>INVITE YOU</Title>
-      초대, 인사말, 우리 소개 및 손글씨
+      <Image
+        src={`${basePath}/images/raws2/hand-copy-2.png`}
+        alt="hand-copy"
+        width={426}
+        height={512}
+      />
     </Wrapper>
   )
 }
