@@ -263,7 +263,7 @@ const Location = () => {
           </Paragraph>
         </Section>
 
-        <Section>
+        {/* <Section>
           <Method>구미 대절버스</Method>
           <Paragraph>
             차량번호 : 75버 9581 (예스 고속 관광)
@@ -273,7 +273,7 @@ const Location = () => {
             출발일시 : <Highlight>5월 17일 오전 9시 30분 출발</Highlight>
             <br />* 이용을 원하시는 분은 사전에 꼭 연락 부탁드립니다.
           </Paragraph>
-        </Section>
+        </Section> */}
       </Info>
     </Wrapper>
   )

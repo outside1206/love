@@ -7,8 +7,6 @@ const HEADERS = ['일', '월', '화', '수', '목', '금', '토']
 
 const Wrapper = styled(motion.div)`
   padding: 52px 0;
-
-  // border: 1px solid red;
 `
 
 const Header = styled.div`
@@ -16,6 +14,10 @@ const Header = styled.div`
   flex-direction: column;
 
   gap: 10px;
+`
+
+const DDay = styled.div`
+  color: #e0e0e0;
 `
 
 const Title = styled.div`
@@ -64,7 +66,7 @@ const Schedule = () => {
       viewport={{ once: true }}
     >
       <Header>
-        <Title>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</Title>
+        <DDay>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</DDay>
         <Title>2025년 11월 22일 토요일 오후 1시</Title>
         <Title>그대들을 초대합니다.</Title>
       </Header>

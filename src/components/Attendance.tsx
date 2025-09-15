@@ -72,7 +72,7 @@ const Button = styled.button`
   padding: 20px 0;
   margin: 0;
 
-  background-color: #2c3e50;
+  background-color: #ff5e6c;
 
   border-width: 0px;
   border-radius: 10px;
