@@ -65,19 +65,19 @@ const PictureThumb = ({
   alt: string
   sizes: string
 }) => {
-  const bp = nextConfig.basePath ?? ''
+  const basePath = nextConfig.basePath ?? ''
   const srcsetWebp = [
-    `${bp}/images/converted2/${baseName}-430.webp 430w`,
-    `${bp}/images/converted2/${baseName}-860.webp 860w`,
-    `${bp}/images/converted2/${baseName}-1290.webp 1290w`,
-    `${bp}/images/converted2/${baseName}-1625.webp 1625w`,
+    `${basePath}/images/converted2/${baseName}-430.webp 430w`,
+    `${basePath}/images/converted2/${baseName}-860.webp 860w`,
+    `${basePath}/images/converted2/${baseName}-1290.webp 1290w`,
+    `${basePath}/images/converted2/${baseName}-1625.webp 1625w`,
   ].join(', ')
 
   return (
     <picture>
       <source type="image/webp" srcSet={srcsetWebp} sizes={sizes} />
       <Img
-        src={`${bp}/images/converted2/${baseName}.jpeg`}
+        src={`${basePath}/images/converted2/${baseName}.jpeg`}
         alt={alt}
         loading="lazy"
         decoding="async"

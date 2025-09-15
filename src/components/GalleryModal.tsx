@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
+import { useState } from 'react'
+import { VscArrowLeft, VscArrowRight, VscClose } from 'react-icons/vsc'
 import nextConfig from '../../next.config'
 import Modal from './public/Modal'
-import { useState } from 'react'
-import { VscClose, VscArrowLeft, VscArrowRight } from 'react-icons/vsc'
 
 interface GalleryModalProps {
   open: boolean
@@ -45,6 +44,13 @@ const ImageWrapper = styled.div<{ aspectRatio: number }>`
   aspect-ratio: ${({ aspectRatio }) => aspectRatio};
 `
 
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+`
+
 const GalleryModal = ({
   open,
   onClose,
@@ -52,6 +58,12 @@ const GalleryModal = ({
   onArrowClick,
 }: GalleryModalProps) => {
   const [aspectRatio, setAspectRatio] = useState(1)
+
+  const basePath = nextConfig.basePath ?? ''
+  const srcsetWebp = [
+    `${basePath}/images/converted2/gallery${imageNum}-1290.webp 1290w`,
+    `${basePath}/images/converted2/gallery${imageNum}-1625.webp 1625w`,
+  ].join(', ')
 
   return (
     <Modal
@@ -76,17 +88,20 @@ const GalleryModal = ({
           />
         </Button>
         <ImageWrapper aspectRatio={aspectRatio}>
-          <Image
-            src={`${nextConfig.basePath}/images/raws2/gallery${imageNum}.jpeg`}
-            alt={`gallery${imageNum}`}
-            fill
-            style={{ objectFit: 'contain' }}
-            onLoad={(e) => {
-              const image = e.currentTarget as HTMLImageElement
-              const ratio = image.naturalWidth / image.naturalHeight
-              setAspectRatio(ratio)
-            }}
-          />
+          <picture>
+            <source type="image/webp" srcSet={srcsetWebp} />
+            <Img
+              src={`${basePath}/images/converted2/gallery${imageNum}.jpeg`}
+              alt={`gallery${imageNum}`}
+              loading="lazy"
+              decoding="async"
+              onLoad={(e) => {
+                const image = e.currentTarget as HTMLImageElement
+                const ratio = image.naturalWidth / image.naturalHeight
+                setAspectRatio(ratio)
+              }}
+            />
+          </picture>
         </ImageWrapper>
         <Button>
           <VscArrowRight
