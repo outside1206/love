@@ -1,8 +1,9 @@
 import Attendance from '@/components/Attendance'
-import Gallery from '@/components/Gallery'
 import Greeting from '@/components/Greeting'
+import JejuGallery from '@/components/JejuGallery'
 import Location from '@/components/Location'
 import Schedule from '@/components/Schedule'
+import StudioGallery from '@/components/StudioGallery'
 import Summary from '@/components/Summary'
 import Title from '@/components/Title'
 import styled from '@emotion/styled'
@@ -24,10 +25,11 @@ const Home = () => {
   return (
     <Page>
       <Title />
+      <Schedule />
       <Summary />
       <Greeting />
-      <Gallery />
-      <Schedule />
+      <JejuGallery />
+      <StudioGallery />
       <Location />
       <Attendance />
     </Page>
