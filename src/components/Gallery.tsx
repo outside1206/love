@@ -13,26 +13,34 @@ const Wrapper = styled(motion.div)`
 
   // border: 1px solid red;
 `
+
+const Title = styled.div`
+  font-family: 'Brownhill Script';
+  font-size: 48px;
+  color: #ff5e6c;
+`
+
 const Gallery = () => {
   const images = [
+    '1',
     '2',
     '3',
-    '31',
-    '32',
-    '23',
-    '22',
-    '1',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
     '11',
     '12',
-    '33',
-    '34',
     '13',
     '14',
     '15',
-    '36',
-    '24',
-    '26',
-    '27',
+    '16',
+    '17',
+    '18',
+    '19',
   ]
 
   const [open, setOpen] = useState<boolean>(false)
@@ -63,42 +71,44 @@ const Gallery = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
+      <Title>JEJU SNAP</Title>
       <GalleryRowType
         type={2}
-        tall1="2"
-        tall2="3"
-        wide1="31"
-        wide2="32"
-        onClickImage={onClickImage}
-      />
-      <GalleryRowType
-        type={4}
-        tall1="23"
-        tall2="22"
-        tall3="1"
+        tall1="1"
+        wide1="2"
+        wide2="3"
+        tall2="4"
         onClickImage={onClickImage}
       />
       <GalleryRowType
         type={1}
-        tall1="11"
-        tall2="12"
-        wide1="33"
-        wide2="34"
-        onClickImage={onClickImage}
-      />
-      <GalleryRowType
-        type={4}
-        tall1="13"
-        tall2="14"
-        tall3="15"
+        wide1="5"
+        wide2="6"
+        tall1="7"
+        tall2="8"
         onClickImage={onClickImage}
       />
       <GalleryRowType
         type={3}
-        tall1="36"
-        tall2="24"
-        wide1="26"
-        wide2="27"
+        tall1="9"
+        tall2="10"
+        wide1="11"
+        wide2="12"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={3}
+        tall1="13"
+        tall2="14"
+        wide1="15"
+        wide2="16"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="17"
+        tall2="18"
+        tall3="19"
         onClickImage={onClickImage}
       />
       {open && (
