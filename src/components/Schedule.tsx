@@ -6,21 +6,26 @@ import { motion } from 'framer-motion'
 const HEADERS = ['일', '월', '화', '수', '목', '금', '토']
 
 const Wrapper = styled(motion.div)`
-  padding: 52px 0;
+  padding-top: 40px;
+`
+
+const Title = styled.div`
+  font-family: 'Brownhill Script';
+  font-size: 32px;
+  color: #ff5e6c;
+
+  margin-bottom: 15px;
 `
 
 const Header = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  font-family: 'Anek Bangla';
 `
 
-const DDay = styled.div`
-  color: #e0e0e0;
-`
-
-const Title = styled.div`
+const Date = styled.div`
+  font-size: 20px;
   color: #e0e0e0;
 `
 
@@ -28,7 +33,7 @@ const CalendarContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  padding: 40px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 `
 
 const CalendarWrapper = styled.div`
@@ -47,7 +52,8 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
   align-items: center;
   justify-content: center;
 
-  font-size: 14px;
+  font-family: 'Anek Bangla';
+  font-size: 18px;
   color: #b0b0b0;
   ${({ isRed }) => (isRed ? 'color: #ea7653;' : '')}
   ${({ isTarget }) => (isTarget ? 'color: white;' : '')}
@@ -55,6 +61,12 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
   ${({ isTarget }) => (isTarget ? 'background-color: #858585;' : '')}
   
   border-radius: 50%;
+`
+
+const Location = styled.div`
+  font-family: 'Anek Bangla';
+  font-size: 18px;
+  color: #e0e0e0;
 `
 
 const Schedule = () => {
@@ -66,9 +78,9 @@ const Schedule = () => {
       viewport={{ once: true }}
     >
       <Header>
-        <DDay>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</DDay>
-        <Title>2025년 11월 22일 토요일 오후 1시</Title>
-        <Title>그대들을 초대합니다.</Title>
+        <Title>SAVE THE DATE</Title>
+        <Date>2025.11.22 SAT 1PM</Date>
+        <Date>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</Date>
       </Header>
       <CalendarContainer>
         <CalendarWrapper>
@@ -90,6 +102,8 @@ const Schedule = () => {
           })}
         </CalendarWrapper>
       </CalendarContainer>
+      <Location>L65호텔웨딩컨벤션 컨벤션홀</Location>
+      {/* <Location>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</Location> */}
     </Wrapper>
   )
 }

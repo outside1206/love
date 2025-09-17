@@ -1,57 +1,30 @@
 import styled from '@emotion/styled'
-import { useState } from 'react'
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
-import AttendanceModal from './AttendanceModal'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import AttendanceModal from './AttendanceModal'
 
 const Wrapper = styled(motion.div)`
+  font-family: 'Anek Bangla';
   color: #4e4c4b;
 
-  padding: 60px 0;
-
-  // border: 1px solid red;
-`
-
-const SubTitle = styled.div`
-  font-size: 12px;
-  color: #b0b0b0;
+  padding: 40px 0;
 `
 
 const Title = styled.div`
-  font-size: 18px;
+  font-size: 20px;
   color: #e0e0e0;
 
-  margin-top: 10px;
-`
-
-const Header = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 `
 
 const Body = styled.div`
   color: #b0b0b0;
-  font-size: 13px;
+
+  margin-bottom: 20px;
 `
 
-const HallInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  margin: 60px 80px 60px 80px;
-  padding: 20px 0;
-  gap: 5px;
-
-  border-top: 1px dashed #b0b0b0;
-  border-bottom: 1px dashed #b0b0b0;
-`
-
-const HallInfoText = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 14px;
-  color: #b0b0b0;
+const Text = styled.div`
+  margin: 3px 0;
 `
 
 const ButtonWrapper = styled.div`
@@ -59,7 +32,8 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin: 0 32.5px;
+  // margin: 0 32.5px;
+  // margin: 0 80px;
 `
 
 const Button = styled.button`
@@ -69,14 +43,14 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  padding: 20px 0;
-  margin: 0;
+  padding: 13px 0;
+  margin: 0 100px;
 
-  background-color: #ff5e6c;
+  background-color: black;
 
   border-width: 0px;
-  border-radius: 10px;
-  border: none;
+  border-radius: 32px;
+  border: 2px solid #ff5e6c;
 
   color: white;
 
@@ -95,27 +69,14 @@ const Attendance = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <Header>
-        <SubTitle>SAVE THE DATE</SubTitle>
-        <Title>참석 여부를 전달해주세요</Title>
-      </Header>
+      <Title>참석 여부를 전달해주세요</Title>
       <Body>
-        <p>결혼식 참석 전 참석여부를 응답해주시면</p>
-        <p>결혼식 준비에 있어 큰 도움이 됩니다.</p>
-        <p>한 분 한 분 더욱 귀하게 모실 수 있도록</p>
-        <p>아래 버튼을 클릭하여 참석여부를</p>
-        <p>전달 부탁드립니다.</p>
+        <Text>결혼식 참석 전 참석여부를 응답해주시면</Text>
+        <Text>결혼식 준비에 있어 큰 도움이 됩니다.</Text>
+        <Text>한 분 한 분 더욱 귀하게 모실 수 있도록</Text>
+        <Text>아래 버튼을 클릭하여 참석여부를</Text>
+        <Text>전달 부탁드립니다.</Text>
       </Body>
-      <HallInfo>
-        <HallInfoText>
-          <FaCalendarAlt />
-          11월 22일 오후 1시
-        </HallInfoText>
-        <HallInfoText>
-          <FaMapMarkerAlt />
-          L65호텔웨딩컨벤션 컨벤션홀
-        </HallInfoText>
-      </HallInfo>
       <ButtonWrapper>
         <Button
           onClick={() => {

@@ -6,20 +6,34 @@ import nextConfig from '../../next.config'
 import { motion } from 'framer-motion'
 
 const Wrapper = styled(motion.div)`
-  font-family: 'Anek Bangla';
+  padding: 40px 0;
 
-  padding-top: 40px;
+  // border: 1px solid red;
+`
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+  margin-bottom: 30px;
 `
 
 const Title = styled.div`
-  font-size: 20px;
   color: #e0e0e0;
 `
 
 const SubTitle = styled.div`
   color: #b0b0b0;
+  font-size: 13px;
+`
 
-  margin-bottom: 10px;
+const LocationSection = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+  margin-bottom: 30px;
 `
 
 const ButtonWrapper = styled.div`
@@ -52,7 +66,7 @@ const ButtonStyled = styled.a`
   flex: 1;
 
   gap: 6px;
-  padding: 8px 10px;
+  padding: 10px 14px;
 
   font-size: 13px;
   color: #4e4c4b;
@@ -105,12 +119,12 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-top: 30px;
+  margin: 30px 0;
   padding: 0 17px;
-  gap: 15px;
+  gap: 30px;
 
-  font-size: 14px;
   color: #b0b0b0;
+  font-size: 14px;
   text-align: left;
 `
 
@@ -147,7 +161,7 @@ const LineSpan = styled.span<{ color?: string }>`
     `}
   font-size: 10px;
 
-  padding: 0.5px 10px;
+  padding: 3px 10px;
   margin-right: 2px;
 
   border-radius: 30px;
@@ -167,8 +181,14 @@ const Location = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <Title>L65호텔웨딩컨벤션 컨벤션홀</Title>
-      <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
+      <Header>
+        <SubTitle>LOCATION</SubTitle>
+        <Title>오시는 길</Title>
+      </Header>
+      <LocationSection>
+        <Title>L65호텔웨딩컨벤션 컨벤션홀</Title>
+        <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
+      </LocationSection>
       {isClient && <NaverMaps />}
       <ButtonWrapper>
         <ButtonStyled

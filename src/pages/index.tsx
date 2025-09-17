@@ -4,7 +4,6 @@ import JejuGallery from '@/components/JejuGallery'
 import Location from '@/components/Location'
 import Schedule from '@/components/Schedule'
 import StudioGallery from '@/components/StudioGallery'
-import Summary from '@/components/Summary'
 import Title from '@/components/Title'
 import styled from '@emotion/styled'
 
@@ -26,7 +25,6 @@ const Home = () => {
     <Page>
       <Title />
       <Schedule />
-      <Summary />
       <Greeting />
       <JejuGallery />
       <StudioGallery />

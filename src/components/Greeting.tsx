@@ -4,19 +4,17 @@ import Image from 'next/image'
 import nextConfig from '../../next.config'
 
 const Wrapper = styled(motion.div)`
-  padding: 60px 0;
+  padding: 40px 0;
 
   color: #e0e0e0;
-
-  // border: 1px solid red;
 `
 
 const Title = styled.div`
   font-family: 'Brownhill Script';
-  font-size: 40px;
+  font-size: 32px;
   color: #ff5e6c;
 
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `
 
 const Greeting = () => {
@@ -33,8 +31,8 @@ const Greeting = () => {
       <Image
         src={`${basePath}/images/raws2/hand-copy-2.png`}
         alt="hand-copy"
-        width={426}
-        height={512}
+        width={300}
+        height={360}
       />
     </Wrapper>
   )

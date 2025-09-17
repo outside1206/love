@@ -15,7 +15,7 @@ const Wrapper = styled(motion.div)`
 
 const Title = styled.div`
   font-family: 'Brownhill Script';
-  font-size: 40px;
+  font-size: 32px;
   color: #ff5e6c;
 `
 
