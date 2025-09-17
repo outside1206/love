@@ -23,7 +23,7 @@ export default function Title() {
       viewport={{ once: true }}
     >
       <Image
-        src={`${basePath}/images/raws/title4.png`}
+        src={`${basePath}/images/raws2/title4.png`}
         alt="title"
         width={430}
         height={645}
