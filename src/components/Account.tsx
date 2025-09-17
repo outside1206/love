@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const Wrapper = styled(motion.div)`
   font-family: 'Anek Bangla';
 
-  padding: 40px 0;
+  padding: 40px 20px;
 `
 
 const Title = styled.div`
