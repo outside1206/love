@@ -7,7 +7,7 @@ const Wrapper = styled(motion.div)`
   font-family: 'Anek Bangla';
   color: #4e4c4b;
 
-  padding: 40px 0;
+  padding-top: 40px;
 `
 
 const Title = styled.div`
@@ -31,9 +31,6 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // margin: 0 32.5px;
-  // margin: 0 80px;
 `
 
 const Button = styled.button`
@@ -50,7 +47,7 @@ const Button = styled.button`
 
   border-width: 0px;
   border-radius: 32px;
-  border: 2px solid #ff5e6c;
+  border: 1px solid #ff5e6c;
 
   color: white;
 
@@ -59,6 +56,7 @@ const Button = styled.button`
     transform: scale(0.98) !important;
   }
 `
+
 const Attendance = () => {
   const [open, setOpen] = useState<boolean>(false)
 

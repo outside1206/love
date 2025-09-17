@@ -1,3 +1,4 @@
+import Account from '@/components/Account'
 import Attendance from '@/components/Attendance'
 import Greeting from '@/components/Greeting'
 import JejuGallery from '@/components/JejuGallery'
@@ -28,8 +29,9 @@ const Home = () => {
       <Greeting />
       <JejuGallery />
       <StudioGallery />
-      <Location />
       <Attendance />
+      <Location />
+      <Account />
     </Page>
   )
 }
