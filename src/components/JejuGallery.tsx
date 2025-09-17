@@ -3,6 +3,7 @@ import GalleryRowType from './public/GalleryRowType'
 import { useState } from 'react'
 import GalleryModal from './GalleryModal'
 import { motion } from 'framer-motion'
+import SectionTitle from './public/SectionTitle'
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -10,12 +11,6 @@ const Wrapper = styled(motion.div)`
 
   gap: 12px;
   padding: 0 10px;
-`
-
-const Title = styled.div`
-  font-family: 'Brownhill Script';
-  font-size: 32px;
-  color: #ff5e6c;
 `
 
 const JejuGallery = () => {
@@ -69,7 +64,7 @@ const JejuGallery = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <Title>JEJU SNAP</Title>
+      <SectionTitle>JEJU SNAP</SectionTitle>
       <GalleryRowType
         type={2}
         tall1="1"

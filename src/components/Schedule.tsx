@@ -2,19 +2,12 @@ import { _2025_11_Weeks } from '@/lib/constants'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
+import SectionTitle from './public/SectionTitle'
 
 const HEADERS = ['일', '월', '화', '수', '목', '금', '토']
 
 const Wrapper = styled(motion.div)`
   padding-top: 40px;
-`
-
-const Title = styled.div`
-  font-family: 'Brownhill Script';
-  font-size: 32px;
-  color: #ff5e6c;
-
-  margin-bottom: 15px;
 `
 
 const Header = styled.div`
@@ -25,7 +18,6 @@ const Header = styled.div`
 `
 
 const Date = styled.div`
-  font-size: 20px;
   color: #e0e0e0;
 `
 
@@ -53,7 +45,6 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
   justify-content: center;
 
   font-family: 'Anek Bangla';
-  font-size: 18px;
   color: #b0b0b0;
   ${({ isRed }) => (isRed ? 'color: #ea7653;' : '')}
   ${({ isTarget }) => (isTarget ? 'color: white;' : '')}
@@ -65,7 +56,6 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
 
 const Location = styled.div`
   font-family: 'Anek Bangla';
-  font-size: 18px;
   color: #e0e0e0;
 `
 
@@ -78,7 +68,7 @@ const Schedule = () => {
       viewport={{ once: true }}
     >
       <Header>
-        <Title>SAVE THE DATE</Title>
+        <SectionTitle>SAVE THE DATE</SectionTitle>
         <Date>2025.11.22 SAT 1PM</Date>
         <Date>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</Date>
       </Header>
@@ -103,7 +93,6 @@ const Schedule = () => {
         </CalendarWrapper>
       </CalendarContainer>
       <Location>L65호텔웨딩컨벤션 컨벤션홀</Location>
-      {/* <Location>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</Location> */}
     </Wrapper>
   )
 }
