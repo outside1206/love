@@ -43,13 +43,13 @@ const Button = styled.button`
   padding: 13px 0;
   margin: 0 100px;
 
-  background-color: black;
+  background-color: #ff9aa5;
 
   border-width: 0px;
   border-radius: 32px;
-  border: 1px solid #ff5e6c;
+  border: none;
 
-  color: white;
+  color: #efefef;
 
   :enabled:active {
     opacity: 0.8 !important;

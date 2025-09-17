@@ -4,6 +4,7 @@ import Greeting from '@/components/Greeting'
 import JejuGallery from '@/components/JejuGallery'
 import Location from '@/components/Location'
 import Schedule from '@/components/Schedule'
+import Share from '@/components/Share'
 import StudioGallery from '@/components/StudioGallery'
 import Title from '@/components/Title'
 import styled from '@emotion/styled'
@@ -32,6 +33,7 @@ const Home = () => {
       <Attendance />
       <Location />
       <Account />
+      <Share />
     </Page>
   )
 }

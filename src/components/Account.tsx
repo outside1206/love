@@ -75,8 +75,8 @@ const Account = () => {
           accountHolder="이주희"
         />
         <AccountData
-          bankName="신한"
-          accountNumber="110 469 134251"
+          bankName="하나"
+          accountNumber="37191062547107"
           accountHolder="유가연"
         />
       </AccountList>
