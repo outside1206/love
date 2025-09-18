@@ -68,7 +68,7 @@ const Schedule = () => {
       viewport={{ once: true }}
     >
       <Header>
-        <SectionTitle>SAVE THE DATE</SectionTitle>
+        <SectionTitle>Save The Date</SectionTitle>
         <Date>2025.11.22 SAT 1PM</Date>
         <Date>D - {dayjs('2025-11-23').diff(dayjs(), 'days')}</Date>
       </Header>

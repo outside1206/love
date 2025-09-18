@@ -14,28 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>상가 커플 결혼식에 초대하겠습니다.</title>
-        <meta name="description" content="come come" />
-        <link
-          href="https://fonts.cdnfonts.com/css/brownhill-script"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.cdnfonts.com/css/anek-bangla"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          as="style"
-          crossOrigin=""
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-        />
+        <title>유가연 ♥️ 변상현 결혼합니다</title>
       </Head>
       <script
         defer
         src="https://developers.kakao.com/sdk/js/kakao.min.js"
       ></script>
-
       <NavermapsProvider
         ncpKeyId={process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID as string}
       >

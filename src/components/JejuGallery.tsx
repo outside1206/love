@@ -64,7 +64,7 @@ const JejuGallery = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <SectionTitle>JEJU SNAP</SectionTitle>
+      <SectionTitle>Jeju Snap</SectionTitle>
       <GalleryRowType
         type={2}
         tall1="1"

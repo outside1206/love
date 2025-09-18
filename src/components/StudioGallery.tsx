@@ -57,7 +57,7 @@ const StudioGallery = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <SectionTitle>STUDIO</SectionTitle>
+      <SectionTitle>Studio</SectionTitle>
       <GalleryRowType
         type={4}
         tall1="20"
