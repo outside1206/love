@@ -26,10 +26,10 @@ const Overlay = styled.div`
   padding-bottom: 30px;
 `
 
-const AnekBangla = styled.div`
+const AnekBangla = styled.div<{ fontSize?: number }>`
   font-family: 'Anek Bangla';
   font-variation-settings: 'wdth' 125;
-  font-size: 16px;
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : '18px')};
   font-weight: normal;
   color: #ff5e6c;
 `
@@ -65,7 +65,7 @@ export default function Title() {
         <AnekBangla>YOU&apos;RE INVITED TO</AnekBangla>
         <BrownhillScript>Our Wedding Day</BrownhillScript>
         <AnekBangla>2025.11.22 SAT 01:00 PM</AnekBangla>
-        <AnekBangla>at. L65 Hotel Wedding Convention</AnekBangla>
+        <AnekBangla fontSize={14}>at. L65 Hotel Wedding Convention</AnekBangla>
       </Overlay>
     </Wrapper>
   )
