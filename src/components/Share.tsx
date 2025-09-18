@@ -54,13 +54,13 @@ const CopyRight = styled.div`
 const Share = () => {
   const onClickKakaoShare = () => {
     window.Kakao.Share.sendCustom({
-      templateId: 124421,
+      templateId: Number(process.env.NEXT_PUBLIC_KAKAO_SHARE_TEMPLATE_ID_1),
     })
   }
 
   useEffect(() => {
     if (window.Kakao && !window.Kakao.isInitialized()) {
-      window.Kakao.init('78da7e5b1aa903f802549944816ee552')
+      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY)
     }
   }, [])
 
