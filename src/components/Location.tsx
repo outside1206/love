@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
-import { useEffect, useState } from 'react'
-import NaverMaps from './NaverMap'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import nextConfig from '../../next.config'
-import { motion } from 'framer-motion'
 import SectionTitle from './public/SectionTitle'
 
 const Wrapper = styled(motion.div)`
@@ -154,12 +152,14 @@ const LineSpan = styled.span<{ color?: string }>`
   border-radius: 30px;
 `
 
-const Location = () => {
-  const [isClient, setIsClient] = useState(false)
+const basePath = nextConfig.basePath ?? ''
 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+const Location = () => {
+  // const [isClient, setIsClient] = useState(false)
+
+  // useEffect(() => {
+  //   setIsClient(true)
+  // }, [])
 
   return (
     <Wrapper
@@ -171,7 +171,13 @@ const Location = () => {
       <SectionTitle>Location</SectionTitle>
       <Title>L65호텔웨딩컨벤션 컨벤션홀</Title>
       <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
-      {isClient && <NaverMaps />}
+      {/* {isClient && <NaverMaps />} */}
+      <Image
+        src={`${basePath}/images/raws/map.png`}
+        alt="title"
+        width={324}
+        height={244}
+      />
       <ButtonWrapper>
         <ButtonStyled
           href={
