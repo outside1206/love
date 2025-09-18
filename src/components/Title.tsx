@@ -6,10 +6,39 @@ import nextConfig from '../../next.config'
 const Wrapper = styled(motion.div)`
   position: relative;
   width: 100%;
-  /* 비율 고정으로 CLS 방지 (가로/세로) */
   aspect-ratio: 1625 / 2438;
-  max-width: 430px; /* Page가 이미 430px이면 없어도 OK */
+  max-width: 430px;
   margin: 0 auto;
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding-bottom: 30px;
+`
+
+const AnekBangla = styled.div`
+  font-family: 'Anek Bangla';
+  font-variation-settings: 'wdth' 125;
+  font-size: 16px;
+  font-weight: normal;
+  color: #ff5e6c;
+`
+
+const BrownhillScript = styled.div`
+  font-family: 'Brownhill Script', cursive;
+  font-size: 60px;
+  font-weight: normal;
+  color: #ff5e6c;
 `
 
 const basePath = nextConfig.basePath ?? ''
@@ -23,7 +52,7 @@ export default function Title() {
       viewport={{ once: true }}
     >
       <Image
-        src={`${basePath}/images/raws/title4.png`}
+        src={`${basePath}/images/raws/title5.png`}
         alt="title"
         width={430}
         height={645}
@@ -32,6 +61,12 @@ export default function Title() {
         fetchPriority="high"
         style={{ width: '100%', height: 'auto', display: 'block' }}
       />
+      <Overlay>
+        <AnekBangla>YOU&apos;RE INVITED TO</AnekBangla>
+        <BrownhillScript>Our Wedding Day</BrownhillScript>
+        <AnekBangla>2025.11.22 SAT 01:00 PM</AnekBangla>
+        <AnekBangla>at. L65 Hotel Wedding Convention</AnekBangla>
+      </Overlay>
     </Wrapper>
   )
 }
