@@ -1,10 +1,16 @@
 import styled from '@emotion/styled'
+import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { RiKakaoTalkLine } from 'react-icons/ri'
 
-const Wrapper = styled.div`
+interface ShareProps {
+  templateId: number
+}
+
+const Wrapper = styled(motion.div)`
   font-family: 'Anek Bangla';
 
+  margin-top: 40px;
   padding: 40px 0;
 
   background-color: #f2eeee;
@@ -51,10 +57,10 @@ const CopyRight = styled.div`
   }
 `
 
-const Share = () => {
+const Share = ({ templateId }: ShareProps) => {
   const onClickKakaoShare = () => {
     window.Kakao.Share.sendCustom({
-      templateId: Number(process.env.NEXT_PUBLIC_KAKAO_SHARE_TEMPLATE_ID_1),
+      templateId,
     })
   }
 
@@ -65,7 +71,12 @@ const Share = () => {
   }, [])
 
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
       <ThankYouText>
         항상 저희를 지켜봐주시고 지원해주신 부모님과 가족,
       </ThankYouText>
