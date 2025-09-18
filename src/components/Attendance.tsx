@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import AttendanceModal from './AttendanceModal'
+import SectionTitle from './public/SectionTitle'
 
 const Wrapper = styled(motion.div)`
   font-family: 'Anek Bangla';
@@ -11,13 +12,13 @@ const Wrapper = styled(motion.div)`
 `
 
 const Title = styled.div`
-  font-size: 20px;
   color: #e0e0e0;
 
   margin-bottom: 10px;
 `
 
 const Body = styled.div`
+  font-size: 14px;
   color: #b0b0b0;
 
   margin-bottom: 20px;
@@ -67,6 +68,7 @@ const Attendance = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
+      <SectionTitle>Invite You</SectionTitle>
       <Title>참석 여부를 전달해주세요</Title>
       <Body>
         <Text>결혼식 참석 전 참석여부를 응답해주시면</Text>

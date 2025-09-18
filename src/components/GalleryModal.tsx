@@ -61,8 +61,8 @@ const GalleryModal = ({
 
   const basePath = nextConfig.basePath ?? ''
   const srcsetWebp = [
-    `${basePath}/images/converted2/gallery${imageNum}-1290.webp 1290w`,
-    `${basePath}/images/converted2/gallery${imageNum}-1625.webp 1625w`,
+    `${basePath}/images/converted/gallery${imageNum}-1290.webp 1290w`,
+    `${basePath}/images/converted/gallery${imageNum}-1625.webp 1625w`,
   ].join(', ')
 
   return (
@@ -91,7 +91,7 @@ const GalleryModal = ({
           <picture>
             <source type="image/webp" srcSet={srcsetWebp} />
             <Img
-              src={`${basePath}/images/converted2/gallery${imageNum}.jpeg`}
+              src={`${basePath}/images/converted/gallery${imageNum}.jpeg`}
               alt={`gallery${imageNum}`}
               loading="lazy"
               decoding="async"

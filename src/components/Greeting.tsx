@@ -20,9 +20,9 @@ const Greeting = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <SectionTitle>Invite You</SectionTitle>
+      <SectionTitle>Celebrate With Us</SectionTitle>
       <Image
-        src={`${basePath}/images/raws2/hand-copy-2.png`}
+        src={`${basePath}/images/raws/hand-copy-2.png`}
         alt="hand-copy"
         width={300}
         height={360}

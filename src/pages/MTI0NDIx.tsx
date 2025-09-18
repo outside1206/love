@@ -14,10 +14,10 @@ const Home1 = () => {
       {(templateId) => (
         <>
           <Title />
-          <Schedule />
           <Greeting />
           <JejuGallery />
           <StudioGallery />
+          <Schedule />
           <Attendance />
           <Location />
           <Share templateId={templateId} />

@@ -15,8 +15,8 @@ const Home2 = () => {
       {(templateId) => (
         <>
           <Title />
-          <Schedule />
           <Greeting />
+          <Schedule />
           <JejuGallery />
           <StudioGallery />
           <Attendance />

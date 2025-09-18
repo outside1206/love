@@ -4,6 +4,7 @@ import NaverMaps from './NaverMap'
 import Image from 'next/image'
 import nextConfig from '../../next.config'
 import { motion } from 'framer-motion'
+import SectionTitle from './public/SectionTitle'
 
 const Wrapper = styled(motion.div)`
   font-family: 'Anek Bangla';
@@ -12,11 +13,11 @@ const Wrapper = styled(motion.div)`
 `
 
 const Title = styled.div`
-  font-size: 20px;
   color: #e0e0e0;
 `
 
 const SubTitle = styled.div`
+  font-size: 14px;
   color: #b0b0b0;
 
   margin-bottom: 10px;
@@ -167,6 +168,7 @@ const Location = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
+      <SectionTitle>Location</SectionTitle>
       <Title>L65호텔웨딩컨벤션 컨벤션홀</Title>
       <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
       {isClient && <NaverMaps />}
@@ -179,7 +181,7 @@ const Location = () => {
           rel="noopener noreferrer"
         >
           <Icon
-            src={`${nextConfig.basePath}/images/raws2/navermaps.png`}
+            src={`${nextConfig.basePath}/images/raws/navermaps.png`}
             alt="navermaps"
             width={20}
             height={20}
@@ -195,7 +197,7 @@ const Location = () => {
           rel="noopener noreferrer"
         >
           <Icon
-            src={`${nextConfig.basePath}/images/raws2/kakaomaps.png`}
+            src={`${nextConfig.basePath}/images/raws/kakaomaps.png`}
             alt="kakaomaps"
             width={20}
             height={20}
@@ -204,7 +206,7 @@ const Location = () => {
         </ButtonStyled>
         <ButtonStyled>
           <Icon
-            src={`${nextConfig.basePath}/images/raws2/tmap.jpeg`}
+            src={`${nextConfig.basePath}/images/raws/tmap.jpeg`}
             alt="tmap"
             width={20}
             height={20}

@@ -26,7 +26,18 @@ const StudioGallery = () => {
     '27',
     '28',
     '29',
+    '30',
+    '31',
+    '32',
     '33',
+    '34',
+    '35',
+    '36',
+    '37',
+    '38',
+    '39',
+    '40',
+    '41',
   ]
 
   const [open, setOpen] = useState<boolean>(false)
@@ -57,7 +68,7 @@ const StudioGallery = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <SectionTitle>Studio</SectionTitle>
+      <SectionTitle>Chapter2. Studio</SectionTitle>
       <GalleryRowType
         type={4}
         tall1="20"
@@ -76,8 +87,36 @@ const StudioGallery = () => {
       <GalleryRowType
         type={4}
         tall1="27"
-        tall2="29"
-        tall3="33"
+        tall2="28"
+        tall3="29"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="30"
+        tall2="31"
+        tall3="32"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="33"
+        tall2="34"
+        tall3="35"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="36"
+        tall2="37"
+        tall3="38"
+        onClickImage={onClickImage}
+      />
+      <GalleryRowType
+        type={4}
+        tall1="39"
+        tall2="40"
+        tall3="41"
         onClickImage={onClickImage}
       />
 
