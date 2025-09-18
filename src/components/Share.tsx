@@ -93,7 +93,7 @@ const Share = ({ templateId }: ShareProps) => {
       </ButtonWrapper>
       {/* <CopyRight>직접 만든 종이청첩장 구경하기</CopyRight> */}
       <CopyRight>
-        Developed by <a href="https://github.com/byun618">byun618</a>. Designed
+        Developed by <a href="https://github.com/byun618">byun618</a>. Created
         by 7ryean.
       </CopyRight>
       <CopyRight>Powered by Github Page. 2025.</CopyRight>
