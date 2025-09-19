@@ -23,21 +23,20 @@ const Overlay = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  padding-bottom: 30px;
+  padding-bottom: 33px;
 `
 
 const AnekBangla = styled.div<{ fontSize?: number }>`
-  font-family: 'Anek Bangla';
-  font-variation-settings: 'wdth' 125;
+  font-family: 'Anek Bangla Expanded';
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : '18px')};
-  font-weight: normal;
+  font-weight: 400;
   color: #ff5e6c;
 `
 
 const BrownhillScript = styled.div`
-  font-family: 'Brownhill Script', cursive;
+  font-family: 'Brownhill Script';
   font-size: 60px;
-  font-weight: normal;
+  font-weight: 400;
   color: #ff5e6c;
 `
 

@@ -8,8 +8,6 @@ interface ShareProps {
 }
 
 const Wrapper = styled(motion.div)`
-  font-family: 'Anek Bangla';
-
   margin-top: 40px;
   padding: 40px 0;
 
@@ -35,8 +33,6 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-family: 'Anek Bangla';
 
   border: none;
   background-color: #f2eeee;

@@ -5,8 +5,6 @@ import nextConfig from '../../next.config'
 import SectionTitle from './public/SectionTitle'
 
 const Wrapper = styled(motion.div)`
-  font-family: 'Anek Bangla';
-
   padding-top: 40px;
 `
 

@@ -13,8 +13,6 @@ const Wrapper = styled(motion.div)`
 const Header = styled.div`
   display: flex;
   flex-direction: column;
-
-  font-family: 'Anek Bangla';
 `
 
 const Date = styled.div`
@@ -44,7 +42,6 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
   align-items: center;
   justify-content: center;
 
-  font-family: 'Anek Bangla';
   color: #b0b0b0;
   ${({ isRed }) => (isRed ? 'color: #ea7653;' : '')}
   ${({ isTarget }) => (isTarget ? 'color: white;' : '')}
@@ -55,7 +52,6 @@ const CalendarCell = styled.div<{ isRed?: boolean; isTarget?: boolean }>`
 `
 
 const Location = styled.div`
-  font-family: 'Anek Bangla';
   color: #e0e0e0;
 `
 

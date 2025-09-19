@@ -16,9 +16,9 @@ const Home2 = () => {
         <>
           <Title />
           <Greeting />
-          <Schedule />
           <JejuGallery />
           <StudioGallery />
+          <Schedule />
           <Attendance />
           <Location />
           <Account />

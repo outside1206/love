@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
 
 const Wrapper = styled.div`
-  // font-family: 'Brownhill Script';
-  font-family: 'Anek Bangla';
-  font-variation-settings: 'wdth' 125;
+  font-family: 'Anek Bangla Expanded';
+  font-weight: 500;
   font-size: 20px;
   color: #ff5e6c;
 

@@ -5,7 +5,6 @@ import AttendanceModal from './AttendanceModal'
 import SectionTitle from './public/SectionTitle'
 
 const Wrapper = styled(motion.div)`
-  font-family: 'Anek Bangla';
   color: #4e4c4b;
 
   padding-top: 40px;

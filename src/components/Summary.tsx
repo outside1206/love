@@ -16,7 +16,6 @@ const Title = styled.div`
 `
 
 const Body = styled.div`
-  font-family: 'Anek Bangla';
   font-size: 18px;
 `
 
