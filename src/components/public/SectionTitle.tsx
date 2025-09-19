@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 
 const Wrapper = styled.div`
-  font-family: 'Anek Bangla Expanded';
+  font-family: 'Anek Bangla';
   font-weight: 500;
+
   font-size: 20px;
   color: #ff5e6c;
 

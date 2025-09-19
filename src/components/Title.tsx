@@ -27,16 +27,17 @@ const Overlay = styled.div`
 `
 
 const AnekBangla = styled.div<{ fontSize?: number }>`
-  font-family: 'Anek Bangla Expanded';
-  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : '18px')};
+  font-family: 'Anek Bangla';
   font-weight: 400;
+
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : '18px')};
   color: #ff5e6c;
 `
 
 const BrownhillScript = styled.div`
   font-family: 'Brownhill Script';
   font-size: 60px;
-  font-weight: 400;
+
   color: #ff5e6c;
 `
 
