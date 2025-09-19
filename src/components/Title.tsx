@@ -27,7 +27,7 @@ const Overlay = styled.div`
 `
 
 const AnekBangla = styled.div<{ fontSize?: number }>`
-  font-family: 'Anek Bangla';
+  font-family: 'Anek Bangla Expanded';
   font-weight: 400;
 
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : '18px')};

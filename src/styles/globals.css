@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/Pretendard-Regular.otf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Anek Bangla Expanded';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/AnekBangla_Expanded-Regular.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Anek Bangla Expanded';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/AnekBangla_Expanded-Medium.ttf')
+    format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brownhill Script';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/Brownhill Script.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   position: relative;
@@ -8,7 +40,7 @@ body {
   font-family:
     'Pretendard',
     sans-serif,
-    'Anek Bangla',
+    'Anek Bangla Expanded',
     'Brownhill Script',
     -apple-system,
     BlinkMacSystemFont,
