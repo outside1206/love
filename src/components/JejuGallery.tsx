@@ -1,9 +1,10 @@
 import styled from '@emotion/styled'
-import GalleryRowType from './public/GalleryRowType'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import GalleryModal from './GalleryModal'
-import { motion } from 'framer-motion'
+import GalleryRowType from './public/GalleryRowType'
 import SectionTitle from './public/SectionTitle'
+import GalleryMembers from './public/GalleryMembers'
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -104,6 +105,7 @@ const JejuGallery = () => {
         tall3="19"
         onClickImage={onClickImage}
       />
+      <GalleryMembers type="jeju" />
       {open && (
         <GalleryModal
           open={open}

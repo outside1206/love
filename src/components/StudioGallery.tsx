@@ -4,6 +4,7 @@ import { useState } from 'react'
 import GalleryModal from './GalleryModal'
 import { motion } from 'framer-motion'
 import SectionTitle from './public/SectionTitle'
+import GalleryMembers from './public/GalleryMembers'
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -119,7 +120,7 @@ const StudioGallery = () => {
         tall3="41"
         onClickImage={onClickImage}
       />
-
+      <GalleryMembers type="studio" />
       {open && (
         <GalleryModal
           open={open}
