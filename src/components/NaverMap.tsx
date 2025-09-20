@@ -1,7 +1,17 @@
+import { useEffect, useState } from 'react'
 import { Container, Marker, NaverMap, useNavermaps } from 'react-naver-maps'
 
 const NaverMaps = () => {
   const navermaps = useNavermaps()
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    return
+  }
 
   return (
     <Container

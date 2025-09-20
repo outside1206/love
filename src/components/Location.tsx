@@ -19,6 +19,16 @@ const SubTitle = styled.div`
   margin-bottom: 10px;
 `
 
+const ThanksTo = styled.div`
+  text-align: left;
+  font-family: 'Gotham';
+  font-size: 10px;
+  font-weight: 300;
+  color: #e6e6e6;
+
+  margin: 0 17px;
+`
+
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -102,63 +112,54 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
 
+  margin: 0 17px;
   margin-top: 30px;
-  padding: 0 17px;
-  gap: 15px;
+  gap: 8px;
 
   font-size: 14px;
   color: #b0b0b0;
+  line-height: 1.6;
+`
+
+const Row = styled.div<{ isTip?: boolean }>`
+  display: grid;
+  grid-template-columns: ${({ isTip }) => (isTip ? '28px' : '60px')} 1fr;
+
+  ${({ isTip }) => (isTip ? 'margin-top: 10px;' : '')}
+`
+
+const Label = styled.div<{ isTip?: boolean }>`
+  color: #b0b0b0;
+  ${({ isTip }) => (isTip ? 'font-size: 10px;' : '')}
   text-align: left;
 `
 
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
+const InfoDetail = styled.div`
+  text-align: left;
 `
 
-const Method = styled.div`
-  color: #e0e0e0;
-  font-weight: 600;
-
-  margin-bottom: 10px;
-`
-
-const Paragraph = styled.p`
-  line-height: 1.6;
-
-  margin: 0;
-  padding: 0 14px;
+const Text = styled.span<{ isTip?: boolean }>`
+  color: white;
+  ${({ isTip }) => (isTip ? 'font-size: 10px;' : '')}
 `
 
 const Highlight = styled.span`
-  font-weight: 600;
+  color: #d3727b;
 `
 
-const LineSpan = styled.span<{ color?: string }>`
-  ${({ color }) =>
-    color &&
-    `
-    background-color: ${color};
-    color: white;
+const Link = styled.div`
+  display: flex;
+  align-items: center;
 
-    `}
-  font-size: 10px;
+  text-decoration: underline;
 
-  padding: 0.5px 10px;
-  margin-right: 2px;
-
-  border-radius: 30px;
+  gap: 5px;
+  margin-top: 4px;
 `
 
 const basePath = nextConfig.basePath ?? ''
 
 const Location = () => {
-  // const [isClient, setIsClient] = useState(false)
-
-  // useEffect(() => {
-  //   setIsClient(true)
-  // }, [])
-
   return (
     <Wrapper
       initial={{ opacity: 0 }}
@@ -169,13 +170,14 @@ const Location = () => {
       <SectionTitle>Location</SectionTitle>
       <Title>L65호텔웨딩컨벤션 컨벤션홀</Title>
       <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
-      {/* {isClient && <NaverMaps />} */}
+      {/* <NaverMaps /> */}
       <Image
         src={`${basePath}/images/raws/map.png`}
-        alt="title"
+        alt="map"
         width={324}
         height={244}
       />
+      <ThanksTo>THANKS TO yoo kyeong</ThanksTo>
       <ButtonWrapper>
         <ButtonStyled
           href={
@@ -219,47 +221,105 @@ const Location = () => {
         </ButtonStyled>
       </ButtonWrapper>
       <Info>
-        <Section>
-          <Method>지하철</Method>
-          <Paragraph>
-            <LineSpan color="#365abc">1호선</LineSpan> 청량리역 5번 출구 바로 앞
-          </Paragraph>
-          <Paragraph>
-            <LineSpan color="#3d9e9e">경의중앙</LineSpan>
-            <LineSpan color="#fe9901">수인분당</LineSpan>
-            <LineSpan color="#87d7be">수인분당</LineSpan> 청량리역 1번 출구 바로
-            앞
-          </Paragraph>
-        </Section>
+        <Row>
+          <Label>지하철</Label>
+          <InfoDetail>
+            <Text>1호선 청량리역 </Text>
+            <Highlight>5번 출구</Highlight>
+            <Text> 바로 앞</Text>
+            <br />
+            <Text>경의중앙선/수인분당선/경춘선 청량리역 </Text>
+            <Highlight>1번 출구</Highlight>
+            <Text> 바로 앞</Text>
+            <br />
+            <Link
+              onClick={() => {
+                window.open(
+                  'https://blog.naver.com/dayul0421/223829006004',
+                  '_blank',
+                )
+              }}
+            >
+              <Image
+                src={`${basePath}/images/raws/triangle.png`}
+                alt="title"
+                width={8}
+                height={8}
+              />
+              <Text>출구에서 나온 후 웨딩홀 까지 가는 길 자세히 보기</Text>
+            </Link>
+          </InfoDetail>
+        </Row>
+        <Row>
+          <Label>버스</Label>
+          <InfoDetail>
+            <Text>청량리역 환승센터 하차</Text>
+          </InfoDetail>
+        </Row>
+        <Row>
+          <Label>자가용</Label>
+          <InfoDetail>
+            <Text>
+              &apos;L65호텔웨딩컨벤션&apos; 또는 &apos;청량리역 5번 출구&apos;
+              검색 후
+            </Text>
+            <br />
+            <Text>전용 지하 주차장 3층, 4층 주차</Text>
 
-        <Section>
-          <Method>버스</Method>
-          <Paragraph>청량리역 환승센터 하차</Paragraph>
-        </Section>
-
-        <Section>
-          <Method>자가용</Method>
-          <Paragraph>‘L65호텔웨딩컨벤션’ 또는 ‘청량리L65’ 검색</Paragraph>
-          <Paragraph>
-            지하 3층, 4층만 주차 가능
+            <Link
+              onClick={() => {
+                window.open(
+                  'https://blog.naver.com/rohansfather_/223507143942',
+                  '_blank',
+                )
+              }}
+            >
+              <Image
+                src={`${basePath}/images/raws/triangle.png`}
+                alt="title"
+                width={8}
+                height={8}
+              />
+              <Text>중랑교(시조사 삼거리) 방향에서 올 경우</Text>
+            </Link>
+            <Link
+              onClick={() => {
+                window.open(
+                  'https://blog.naver.com/rohansfather_/223507143942',
+                  '_blank',
+                )
+              }}
+            >
+              <Image
+                src={`${basePath}/images/raws/triangle.png`}
+                alt="title"
+                width={8}
+                height={8}
+              />
+              <Text>광화문, 종로, 홍릉수목원 방향에서 올 경우</Text>
+            </Link>
+            <Row isTip>
+              <Label isTip>TIP</Label>
+              <Text isTip>주차구역 E4, F4 주차하면 이동이 편리해요</Text>
+              <br />
+              <Text isTip>
+                연회장 입구 태블릿에 번호 등록시 1시간 30분 무료 주차 가능해요
+              </Text>
+              <br />
+              <Text isTip>
+                사전 정산은 지하 주차장 3층, 4층 / 출차시 가능해요
+              </Text>
+            </Row>
+          </InfoDetail>
+        </Row>
+        <Row>
+          <Label>주소</Label>
+          <InfoDetail>
+            <Text>서울특별시 동대문구 왕산로 200 롯데캐슬스카이-L65</Text>
             <br />
-            <Highlight>지하 2층은 주차가 불가능합니다</Highlight>
-            <br />
-            (주차장 출입구를 확인해 주세요)
-          </Paragraph>
-        </Section>
-
-        {/* <Section>
-          <Method>구미 대절버스</Method>
-          <Paragraph>
-            차량번호 : 75버 9581 (예스 고속 관광)
-            <br />
-            출발장소 : 도레미입구 맞은 편 (구미경찰서)
-            <br />
-            출발일시 : <Highlight>5월 17일 오전 9시 30분 출발</Highlight>
-            <br />* 이용을 원하시는 분은 사전에 꼭 연락 부탁드립니다.
-          </Paragraph>
-        </Section> */}
+            <Text>또는 서울특별시 동대문구 전농동 620-69</Text>
+          </InfoDetail>
+        </Row>
       </Info>
     </Wrapper>
   )
