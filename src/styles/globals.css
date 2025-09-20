@@ -30,6 +30,30 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gotham';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/Gotham-bold.ttf')
+    format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/Gotham-Book.otf')
+    format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/Gotham-Medium.otf')
+    format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 html,
 body {
   position: relative;
@@ -42,6 +66,7 @@ body {
     sans-serif,
     'Anek Bangla Expanded',
     'Brownhill Script',
+    'Gotham',
     -apple-system,
     BlinkMacSystemFont,
     Segoe UI,
