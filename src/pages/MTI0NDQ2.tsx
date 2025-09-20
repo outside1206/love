@@ -19,8 +19,8 @@ const Home2 = () => {
           <JejuGallery />
           <StudioGallery />
           <Schedule />
-          <Attendance />
           <Location />
+          <Attendance />
           <Account />
           <Share templateId={templateId} />
         </>

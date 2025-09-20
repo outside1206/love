@@ -226,10 +226,10 @@ const GalleryMembers = ({ type }: GalleryMembersProps) => {
       <CreditTitleButton onClick={() => setCreditOpen((prev) => !prev)}>
         <CreditTitle>Credit</CreditTitle>
         <Image
-          src={`${basePath}/images/raws/arrow-right.png`}
-          alt="arrow-right"
-          width={15}
-          height={15}
+          src={`${basePath}/images/raws/arrow-right-white.png`}
+          alt="arrow-right-white"
+          width={20}
+          height={20}
         />
       </CreditTitleButton>
       <AnimatePresence>

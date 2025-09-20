@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { RiKakaoTalkLine } from 'react-icons/ri'
+import News from './public/News'
 
 interface ShareProps {
   templateId: number
@@ -9,7 +10,7 @@ interface ShareProps {
 
 const Wrapper = styled(motion.div)`
   margin-top: 40px;
-  padding: 40px 0;
+  padding-bottom: 40px;
 
   background-color: #f2eeee;
   border-top: 1px solid #e0e0e0;
@@ -73,6 +74,7 @@ const Share = ({ templateId }: ShareProps) => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
+      <News />
       <ThankYouText>
         항상 저희를 지켜봐주시고 지원해주신 부모님과 가족,
       </ThankYouText>

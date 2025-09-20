@@ -251,7 +251,7 @@ const Location = () => {
           </InfoDetail>
         </Row>
         <Row>
-          <Label>버스</Label>
+          <Label>버&nbsp;&nbsp;&nbsp;스</Label>
           <InfoDetail>
             <Text>청량리역 환승센터 하차</Text>
           </InfoDetail>
@@ -313,7 +313,7 @@ const Location = () => {
           </InfoDetail>
         </Row>
         <Row>
-          <Label>주소</Label>
+          <Label>주&nbsp;&nbsp;&nbsp;소</Label>
           <InfoDetail>
             <Text>서울특별시 동대문구 왕산로 200 롯데캐슬스카이-L65</Text>
             <br />

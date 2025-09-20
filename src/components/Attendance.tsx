@@ -19,6 +19,7 @@ const Title = styled.div`
 const Body = styled.div`
   font-size: 14px;
   color: #b0b0b0;
+  line-height: 1.7;
 
   margin-bottom: 20px;
 `
