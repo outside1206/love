@@ -23,7 +23,7 @@ const Overlay = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  padding-bottom: 45px;
+  padding-bottom: 93px;
 `
 
 const AnekBangla = styled.div<{ fontSize?: number }>`
