@@ -6,6 +6,7 @@ import Page from '@/components/public/Page'
 import Schedule from '@/components/Schedule'
 import Share from '@/components/Share'
 import StudioGallery from '@/components/StudioGallery'
+import Summary from '@/components/Summary'
 import Title from '@/components/Title'
 
 const Home1 = () => {
@@ -14,6 +15,7 @@ const Home1 = () => {
       {(templateId) => (
         <>
           <Title />
+          <Summary />
           <Greeting />
           <JejuGallery />
           <StudioGallery />

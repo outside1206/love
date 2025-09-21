@@ -2,20 +2,13 @@ import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 
 const Wrapper = styled(motion.div)`
-  padding-top: 40px;
-
   color: #e0e0e0;
+
+  margin: 60px 0;
 `
 
-const Title = styled.div`
-  font-family: 'Brownhill Script';
-  font-size: 36px;
-  color: #ff5e6c;
-
-  margin-bottom: 15px;
-`
-
-const Body = styled.div`
+const Text = styled.div`
+  font-family: 'Anek Bangla Expanded';
   font-size: 18px;
 `
 
@@ -27,10 +20,8 @@ const Summary = () => {
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <Title>SAVE THE DATE</Title>
-      <Body>2025.11.22 SAT 1PM</Body>
-      <Body>L65호텔웨딩컨벤션 컨벤션홀</Body>
-      <Body>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</Body>
+      <Text>2025년 11월 22일 토요일 오후 1시</Text>
+      <Text>L65 호텔 웨딩 컨벤션 6층 컨벤션홀</Text>
     </Wrapper>
   )
 }

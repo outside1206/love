@@ -23,7 +23,7 @@ const Overlay = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  padding-bottom: 33px;
+  padding-bottom: 45px;
 `
 
 const AnekBangla = styled.div<{ fontSize?: number }>`
@@ -64,8 +64,6 @@ export default function Title() {
       <Overlay>
         <AnekBangla>YOU&apos;RE INVITED TO</AnekBangla>
         <BrownhillScript>Our Wedding Day</BrownhillScript>
-        <AnekBangla>2025.11.22 SAT 01:00 PM</AnekBangla>
-        <AnekBangla fontSize={14}>at. L65 Hotel Wedding Convention</AnekBangla>
       </Overlay>
     </Wrapper>
   )
