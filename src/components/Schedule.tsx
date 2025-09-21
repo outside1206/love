@@ -8,6 +8,13 @@ const Wrapper = styled(motion.div)`
   padding-top: 40px;
 `
 
+const Month = styled.div`
+  font-size: 17px;
+  color: white;
+
+  margin: 20px 0;
+`
+
 const Date = styled.div`
   font-size: 14px;
   color: #e0e0e0;
@@ -101,6 +108,7 @@ const Schedule = () => {
       viewport={{ once: true }}
     >
       <SectionTitle>Save The Date</SectionTitle>
+      <Month>11</Month>
       <Calendar />
       <Date>2025년 11월 22일 토요일 오후 1시</Date>
       <DdayWrapper>
@@ -133,7 +141,7 @@ const Schedule = () => {
             targetWeekDay: 5,
           })}
         </NumberText>
-        <Text>번 더내고</Text>
+        <Text>화 더보고</Text>
       </Description>
 
       <Description>
