@@ -6,14 +6,17 @@ import News from './public/News'
 
 interface ShareProps {
   templateId: number
+  newsVisible?: boolean
 }
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.div)<{ newVisible?: boolean }>`
   margin-top: 40px;
   padding-bottom: 40px;
 
   background-color: #f2eeee;
   border-top: 1px solid #e0e0e0;
+
+  ${({ newVisible }) => !newVisible && 'padding-top: 40px;'}
 `
 
 const ThankYouText = styled.div`
@@ -54,7 +57,7 @@ const CopyRight = styled.div`
   }
 `
 
-const Share = ({ templateId }: ShareProps) => {
+const Share = ({ templateId, newsVisible }: ShareProps) => {
   const onClickKakaoShare = () => {
     window.Kakao.Share.sendCustom({
       templateId,
@@ -73,8 +76,9 @@ const Share = ({ templateId }: ShareProps) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
       viewport={{ once: true }}
+      newVisible={newsVisible}
     >
-      <News />
+      {newsVisible && <News />}
       <ThankYouText>
         항상 저희를 지켜봐주시고 지원해주신 부모님과 가족,
       </ThankYouText>
@@ -91,8 +95,8 @@ const Share = ({ templateId }: ShareProps) => {
       </ButtonWrapper>
       {/* <CopyRight>직접 만든 종이청첩장 구경하기</CopyRight> */}
       <CopyRight>
-        Developed by <a href="https://github.com/byun618">byun618</a>. Created
-        by 7ryean.
+        Created by 7ryean. Developed by{' '}
+        <a href="https://github.com/byun618">byun618</a>.
       </CopyRight>
       <CopyRight>Powered by Github Page. 2025.</CopyRight>
     </Wrapper>

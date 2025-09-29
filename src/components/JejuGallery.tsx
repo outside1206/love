@@ -6,6 +6,10 @@ import GalleryRowType from './public/GalleryRowType'
 import SectionTitle from './public/SectionTitle'
 import GalleryMembers from './public/GalleryMembers'
 
+interface JejuGalleryProps {
+  visibleMembers?: boolean
+}
+
 const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -14,7 +18,7 @@ const Wrapper = styled(motion.div)`
   padding: 0 10px;
 `
 
-const JejuGallery = () => {
+const JejuGallery = ({ visibleMembers }: JejuGalleryProps) => {
   const images = [
     '1',
     '2',
@@ -105,7 +109,7 @@ const JejuGallery = () => {
         tall3="19"
         onClickImage={onClickImage}
       />
-      <GalleryMembers type="jeju" />
+      {visibleMembers && <GalleryMembers type="jeju" />}
       {open && (
         <GalleryModal
           open={open}

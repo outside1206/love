@@ -1,10 +1,14 @@
 import styled from '@emotion/styled'
-import GalleryRowType from './public/GalleryRowType'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import GalleryModal from './GalleryModal'
-import { motion } from 'framer-motion'
+import GalleryRowType from './public/GalleryRowType'
 import SectionTitle from './public/SectionTitle'
 import GalleryMembers from './public/GalleryMembers'
+
+interface StudioGalleryProps {
+  visibleMembers?: boolean
+}
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -15,7 +19,7 @@ const Wrapper = styled(motion.div)`
   margin-top: 40px;
 `
 
-const StudioGallery = () => {
+const StudioGallery = ({ visibleMembers }: StudioGalleryProps) => {
   const images = [
     '20',
     '21',
@@ -120,7 +124,7 @@ const StudioGallery = () => {
         tall3="41"
         onClickImage={onClickImage}
       />
-      <GalleryMembers type="studio" />
+      {visibleMembers && <GalleryMembers type="studio" />}
       {open && (
         <GalleryModal
           open={open}

@@ -1,4 +1,5 @@
 import Attendance from '@/components/Attendance'
+import Dday from '@/components/Dday'
 import Greeting from '@/components/Greeting'
 import JejuGallery from '@/components/JejuGallery'
 import Location from '@/components/Location'
@@ -17,12 +18,13 @@ const Home1 = () => {
           <Title />
           <Summary />
           <Greeting />
-          <JejuGallery />
-          <StudioGallery />
+          <JejuGallery visibleMembers />
+          <StudioGallery visibleMembers />
           <Schedule />
-          <Location />
+          <Dday />
+          <Location mapType="image" />
           <Attendance />
-          <Share templateId={templateId} />
+          <Share templateId={templateId} newsVisible />
         </>
       )}
     </Page>

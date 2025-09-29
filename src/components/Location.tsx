@@ -2,7 +2,13 @@ import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import nextConfig from '../../next.config'
+import NaverMaps from './NaverMap'
 import SectionTitle from './public/SectionTitle'
+import { useEffect, useState } from 'react'
+
+interface LocationProps {
+  mapType: 'image' | 'naver'
+}
 
 const Wrapper = styled(motion.div)`
   padding-top: 40px;
@@ -159,7 +165,17 @@ const Link = styled.div`
 
 const basePath = nextConfig.basePath ?? ''
 
-const Location = () => {
+const Location = ({ mapType }: LocationProps) => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (mapType === 'naver' && !isClient) {
+    return
+  }
+
   return (
     <Wrapper
       initial={{ opacity: 0 }}
@@ -170,13 +186,16 @@ const Location = () => {
       <SectionTitle>Location</SectionTitle>
       <Title>L65호텔웨딩컨벤션 컨벤션홀</Title>
       <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
-      {/* <NaverMaps /> */}
-      <Image
-        src={`${basePath}/images/raws/map.png`}
-        alt="map"
-        width={324}
-        height={244}
-      />
+      {mapType === 'naver' && isClient && <NaverMaps />}
+      {mapType === 'image' && (
+        <Image
+          src={`${basePath}/images/raws/map.png`}
+          alt="map"
+          width={324}
+          height={244}
+        />
+      )}
+
       <ThanksTo>THANKS TO yoo kyeong</ThanksTo>
       <ButtonWrapper>
         <ButtonStyled

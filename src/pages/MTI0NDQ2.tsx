@@ -20,8 +20,8 @@ const Home2 = () => {
           <Greeting />
           <JejuGallery />
           <StudioGallery />
-          <Schedule />
-          <Location />
+          <Schedule visibleDday />
+          <Location mapType="naver" />
           <Attendance />
           <Account />
           <Share templateId={templateId} />
@@ -32,3 +32,12 @@ const Home2 = () => {
 }
 
 export default Home2
+
+/**
+추가할 것
+- 대절버스 안내
+
+고민중
+- 사진 좀 뺄까
+- 오는 길 설명 단촐하게 바꿀까
+ */

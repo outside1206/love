@@ -47,17 +47,17 @@ const Account = () => {
       <AccountList>
         <AccountData
           bankName="농협"
-          accountNumber="778 02 396536"
-          accountHolder="윤춘화"
+          accountNumber="3520300698843"
+          accountHolder="변정수"
         />
         <AccountData
           bankName="농협"
-          accountNumber="352 0300 6988 43"
-          accountHolder="변상현"
+          accountNumber="77802396536"
+          accountHolder="윤춘화"
         />
         <AccountData
-          bankName="토스"
-          accountNumber="1000 4685 4862"
+          bankName="하나"
+          accountNumber="37191060498807"
           accountHolder="변상현"
         />
       </AccountList>
@@ -65,12 +65,12 @@ const Account = () => {
       <AccountList>
         <AccountData
           bankName="국민"
-          accountNumber="044 21 1103 807"
+          accountNumber="04421103807"
           accountHolder="유경석"
         />
         <AccountData
           bankName="신한"
-          accountNumber="110 224 000466"
+          accountNumber="110224000466"
           accountHolder="이주희"
         />
         <AccountData
