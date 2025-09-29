@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
 
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ const Title = styled.div`
   justify-content: start;
 
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 
   margin-bottom: 10px;
 `
@@ -69,11 +69,15 @@ const Row = styled.div`
 const Label = styled.div`
   display: flex;
   justify-content: start;
+
+  font-size: 14px;
 `
 
 const Content = styled.div`
   display: flex;
   justify-content: start;
+
+  font-size: 14px;
 
   gap: 5px;
 
@@ -114,22 +118,22 @@ const Input = styled.input`
   border: none;
 
   color: #666;
-  font-size: 16px;
+  font-size: 14zpx;
 `
 
-const EatTypeButton = styled(Button)<{ selected: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// const EatTypeButton = styled(Button)<{ selected: boolean }>`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  padding: 10px 20px;
+//   padding: 10px 20px;
 
-  background: ${({ selected }) => (selected ? '#fff' : '#f9f9f9')};
-  color: #666;
+//   background: ${({ selected }) => (selected ? '#fff' : '#f9f9f9')};
+//   color: #666;
 
-  border: 1px solid ${({ selected }) => (selected ? '#ddd' : 'transparent')};
-  border-radius: 5px;
-`
+//   border: 1px solid ${({ selected }) => (selected ? '#ddd' : 'transparent')};
+//   border-radius: 5px;
+// `
 
 const SubmitButton = styled(Button)`
   margin-top: 24px;
@@ -137,7 +141,7 @@ const SubmitButton = styled(Button)`
 
   color: #fff;
 
-  background-color: #d0b9b9;
+  background-color: #ff9aa5;
 
   border-radius: 5px;
 `
@@ -145,19 +149,25 @@ const SubmitButton = styled(Button)`
 const AttendanceModal = ({ open, onClose }: AttendanceModalProps) => {
   const [side, setSide] = useState<'신랑측' | '신부측'>('신랑측')
   const [name, setName] = useState<string>('')
-  const [count, setCount] = useState<string>('')
-  const [eatType, setEatType] = useState<'예정' | '안함' | '미정'>('예정')
+  const [eatCount, setEatCount] = useState<string>('')
+  // const [count, setCount] = useState<string>('')
+  // const [eatType, setEatType] = useState<'예정' | '안함' | '미정'>('예정')
 
   const onClickSide = (side: '신랑측' | '신부측') => {
     setSide(side)
   }
 
-  const onClickEatType = (type: '예정' | '안함' | '미정') => {
-    setEatType(type)
-  }
+  // const onClickEatType = (type: '예정' | '안함' | '미정') => {
+  //   setEatType(type)
+  // }
 
   const handleSubmit = async () => {
-    if (!side || !name || !count || !eatType) {
+    if (
+      !side ||
+      !name ||
+      !eatCount
+      // || !count || !eatType
+    ) {
       alert('모든 필드를 입력해주세요.')
 
       return
@@ -174,13 +184,17 @@ const AttendanceModal = ({ open, onClose }: AttendanceModalProps) => {
       name,
     )
     formData.append(
-      `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_COUNT}`,
-      count,
+      `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_EAT_COUNT}`,
+      eatCount,
     )
-    formData.append(
-      `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_EAT_TYPE}`,
-      eatType,
-    )
+    // formData.append(
+    //   `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_COUNT}`,
+    //   count,
+    // )
+    // formData.append(
+    //   `${process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID_EAT_TYPE}`,
+    //   eatType,
+    // )
 
     await fetch(`${process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}`, {
       method: 'POST',
@@ -240,6 +254,16 @@ const AttendanceModal = ({ open, onClose }: AttendanceModalProps) => {
             </Content>
           </Row>
           <Row>
+            <Label>식사인원</Label>
+            <Content>
+              <Input
+                type="number"
+                value={eatCount}
+                onChange={(e) => setEatCount(e.target.value)}
+              />
+            </Content>
+          </Row>
+          {/* <Row>
             <Label>참석인원</Label>
             <Content>
               <Input
@@ -271,7 +295,7 @@ const AttendanceModal = ({ open, onClose }: AttendanceModalProps) => {
                 미정
               </EatTypeButton>
             </Content>
-          </Row>
+          </Row> */}
           <SubmitButton onClick={handleSubmit}>참석 의사 전달하기</SubmitButton>
         </ContentWrapper>
       </Wrapper>
