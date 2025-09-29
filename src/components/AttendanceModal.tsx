@@ -59,7 +59,7 @@ const Title = styled.div`
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 5fr;
 
   gap: 10px;
 
@@ -84,6 +84,7 @@ const Content = styled.div`
   & > button {
     flex: 1;
   }
+
   & > input {
     flex: 1;
   }
@@ -97,7 +98,7 @@ const SideButton = styled(Button)<{
   align-items: center;
   justify-content: center;
 
-  padding: 10px 20px;
+  padding: 10px 0;
 
   border-radius: 5px;
   background-color: ${({ side, selected }) =>
