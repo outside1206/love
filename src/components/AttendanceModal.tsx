@@ -141,6 +141,7 @@ const SubmitButton = styled(Button)`
   padding: 15px 0 15px 0;
 
   color: #fff;
+  font-size: 16px;
 
   background-color: #ff9aa5;
 
