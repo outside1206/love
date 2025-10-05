@@ -188,15 +188,16 @@ const Location = ({ mapType }: LocationProps) => {
       <SubTitle>서울 동대문구 왕산로 200 SKY-L65 랜드마크타워 6F</SubTitle>
       {mapType === 'naver' && isClient && <NaverMaps />}
       {mapType === 'image' && (
-        <Image
-          src={`${basePath}/images/raws/map.png`}
-          alt="map"
-          width={324}
-          height={244}
-        />
+        <>
+          <Image
+            src={`${basePath}/images/raws/map.png`}
+            alt="map"
+            width={324}
+            height={244}
+          />
+          <ThanksTo>THANKS TO yoo kyeong</ThanksTo>
+        </>
       )}
-
-      <ThanksTo>THANKS TO yoo kyeong</ThanksTo>
       <ButtonWrapper>
         <ButtonStyled
           href={
