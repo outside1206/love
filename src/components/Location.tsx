@@ -22,6 +22,7 @@ const SubTitle = styled.div`
   font-size: 14px;
   color: #b0b0b0;
 
+  margin-top: 6px;
   margin-bottom: 10px;
 `
 
