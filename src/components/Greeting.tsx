@@ -23,13 +23,7 @@ const HandCopyWrapper = styled.div`
   margin-top: 40px;
 `
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  display: block;
-`
+const SecondWrapper = styled.div``
 
 const NameWrapper = styled.div`
   display: flex;
@@ -37,8 +31,6 @@ const NameWrapper = styled.div`
 
   font-family: 'Anek Bangla Expanded';
   font-weight: 400;
-
-  padding: 0 110px;
 `
 
 const Name = styled.div<{ isSmall?: boolean }>`
@@ -66,13 +58,6 @@ const Relation = styled.div<{ marginLeft?: number }>`
 
 const Greeting = ({ visibleRelation }: GreetingProps) => {
   const basePath = nextConfig.basePath ?? ''
-  const galleryNo = 'gallery21'
-  const srcsetWebp = [
-    `${basePath}/images/converted/${galleryNo}-430.webp 430w`,
-    `${basePath}/images/converted/${galleryNo}-860.webp 860w`,
-    `${basePath}/images/converted/${galleryNo}-1290.webp 1290w`,
-    `${basePath}/images/converted/${galleryNo}-1625.webp 1625w`,
-  ].join(', ')
 
   return (
     <Wrapper
@@ -114,27 +99,20 @@ const Greeting = ({ visibleRelation }: GreetingProps) => {
           height={79}
         />
         {visibleRelation && (
-          <picture
+          <Image
+            src={`${basePath}/images/converted/gallery21-860.webp`}
+            alt="hand-copy"
+            width={275}
+            height={430}
             style={{
               marginBottom: '20px',
+              borderRadius: '10px',
             }}
-          >
-            <source
-              type="image/webp"
-              srcSet={srcsetWebp}
-              sizes={'(max-width: 430px) calc((100vw - 24px)/3), 350px'}
-            />
-            <Img
-              src={`${basePath}/images/converted/${galleryNo}.jpeg`}
-              alt="intro"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
+          />
         )}
       </HandCopyWrapper>
       {visibleRelation && (
-        <>
+        <SecondWrapper>
           <NameWrapper>
             <Name>변정수 · 윤춘화</Name>
             <RelationWrapper>
@@ -151,7 +129,7 @@ const Greeting = ({ visibleRelation }: GreetingProps) => {
             </RelationWrapper>
             <Name>가연</Name>
           </NameWrapper>
-        </>
+        </SecondWrapper>
       )}
     </Wrapper>
   )
