@@ -28,14 +28,7 @@ const JejuGallery = ({ visibleMembers }: JejuGalleryProps) => {
     '6',
     '7',
     '8',
-    '9',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
+    ...(visibleMembers ? ['9', '10', '11', '12', '13', '14', '15', '16'] : []),
     '17',
     '18',
     '19',
@@ -86,22 +79,26 @@ const JejuGallery = ({ visibleMembers }: JejuGalleryProps) => {
         tall2="8"
         onClickImage={onClickImage}
       />
-      <GalleryRowType
-        type={3}
-        tall1="9"
-        tall2="10"
-        wide1="11"
-        wide2="12"
-        onClickImage={onClickImage}
-      />
-      <GalleryRowType
-        type={3}
-        tall1="13"
-        tall2="14"
-        wide1="15"
-        wide2="16"
-        onClickImage={onClickImage}
-      />
+      {visibleMembers && (
+        <GalleryRowType
+          type={3}
+          tall1="9"
+          tall2="10"
+          wide1="11"
+          wide2="12"
+          onClickImage={onClickImage}
+        />
+      )}
+      {visibleMembers && (
+        <GalleryRowType
+          type={3}
+          tall1="13"
+          tall2="14"
+          wide1="15"
+          wide2="16"
+          onClickImage={onClickImage}
+        />
+      )}
       <GalleryRowType
         type={4}
         tall1="17"

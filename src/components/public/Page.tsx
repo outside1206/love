@@ -29,6 +29,9 @@ const Page = ({ children }: PageProps) => {
       return null
     }
 
+    console.log(
+      Number(Buffer.from(templateIdBase64, 'base64').toString('utf-8')),
+    )
     return Number(Buffer.from(templateIdBase64, 'base64').toString('utf-8'))
   }, [router.route])
 
