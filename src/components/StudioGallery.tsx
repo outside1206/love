@@ -27,11 +27,15 @@ const StudioGallery = ({ visibleMembers }: StudioGalleryProps) => {
     '23',
     '24',
     '25',
-    ...(visibleMembers ? ['26', '27', '28'] : []),
+    '26',
+    '27',
+    '28',
     '29',
     '30',
     '31',
-    ...(visibleMembers ? ['32', '33', '34'] : []),
+    '32',
+    '33',
+    '34',
   ]
 
   const [open, setOpen] = useState<boolean>(false)
@@ -77,15 +81,13 @@ const StudioGallery = ({ visibleMembers }: StudioGalleryProps) => {
         tall3="25"
         onClickImage={onClickImage}
       />
-      {visibleMembers && (
-        <GalleryRowType
-          type={4}
-          tall1="26"
-          tall2="27"
-          tall3="28"
-          onClickImage={onClickImage}
-        />
-      )}
+      <GalleryRowType
+        type={4}
+        tall1="26"
+        tall2="27"
+        tall3="28"
+        onClickImage={onClickImage}
+      />
       <GalleryRowType
         type={4}
         tall1="29"
@@ -93,15 +95,13 @@ const StudioGallery = ({ visibleMembers }: StudioGalleryProps) => {
         tall3="31"
         onClickImage={onClickImage}
       />
-      {visibleMembers && (
-        <GalleryRowType
-          type={4}
-          tall1="32"
-          tall2="33"
-          tall3="34"
-          onClickImage={onClickImage}
-        />
-      )}
+      <GalleryRowType
+        type={4}
+        tall1="32"
+        tall2="33"
+        tall3="34"
+        onClickImage={onClickImage}
+      />
       {visibleMembers && <GalleryMembers type="studio" />}
       {open && (
         <GalleryModal
