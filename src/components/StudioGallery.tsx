@@ -27,15 +27,11 @@ const StudioGallery = ({ visibleMembers }: StudioGalleryProps) => {
     '23',
     '24',
     '25',
-    '26',
-    '27',
-    '28',
+    ...(visibleMembers ? ['26', '27', '28'] : []),
     '29',
     '30',
     '31',
-    '32',
-    '33',
-    '34',
+    ...(visibleMembers ? ['32', '33', '34'] : []),
   ]
 
   const [open, setOpen] = useState<boolean>(false)
