@@ -65,7 +65,7 @@ const Account = () => {
       <AccountList>
         <AccountData
           bankName="국민"
-          accountNumber="04421103807"
+          accountNumber="044211103807"
           accountHolder="유경석"
         />
         <AccountData
