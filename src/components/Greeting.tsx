@@ -92,12 +92,6 @@ const Greeting = ({ visibleRelation }: GreetingProps) => {
           width={275}
           height={79}
         />
-        <Image
-          src={`${basePath}/images/raws/hand-copy-4.png`}
-          alt="hand-copy"
-          width={275}
-          height={79}
-        />
         {visibleRelation && (
           <Image
             src={`${basePath}/images/converted/gallery21-860.webp`}
