@@ -6,6 +6,7 @@ import SectionTitle from './public/SectionTitle'
 
 interface GreetingProps {
   visibleRelation?: boolean
+  up?: boolean
 }
 
 const Wrapper = styled(motion.div)`
@@ -56,7 +57,7 @@ const Relation = styled.div<{ marginLeft?: number }>`
   ${({ marginLeft }) => (marginLeft ? `margin-left: ${marginLeft}px` : '')}
 `
 
-const Greeting = ({ visibleRelation }: GreetingProps) => {
+const Greeting = ({ visibleRelation, up }: GreetingProps) => {
   const basePath = nextConfig.basePath ?? ''
 
   return (
@@ -107,22 +108,45 @@ const Greeting = ({ visibleRelation }: GreetingProps) => {
       </HandCopyWrapper>
       {visibleRelation && (
         <SecondWrapper>
-          <NameWrapper>
-            <Name>변정수 · 윤춘화</Name>
-            <RelationWrapper>
-              <Relation>의</Relation>
-              <Relation>아들</Relation>
-            </RelationWrapper>
-            <Name>상현</Name>
-          </NameWrapper>
-          <NameWrapper>
-            <Name>유경석 · 이주희</Name>
-            <RelationWrapper>
-              <Relation>의</Relation>
-              <Relation marginLeft={6}>딸</Relation>
-            </RelationWrapper>
-            <Name>가연</Name>
-          </NameWrapper>
+          {up ? (
+            <>
+              <NameWrapper>
+                <Name>유경석 · 이주희</Name>
+                <RelationWrapper>
+                  <Relation>의</Relation>
+                  <Relation marginLeft={6}>딸</Relation>
+                </RelationWrapper>
+                <Name>가연</Name>
+              </NameWrapper>
+              <NameWrapper>
+                <Name>변정수 · 윤춘화</Name>
+                <RelationWrapper>
+                  <Relation>의</Relation>
+                  <Relation>아들</Relation>
+                </RelationWrapper>
+                <Name>상현</Name>
+              </NameWrapper>
+            </>
+          ) : (
+            <>
+              <NameWrapper>
+                <Name>변정수 · 윤춘화</Name>
+                <RelationWrapper>
+                  <Relation>의</Relation>
+                  <Relation>아들</Relation>
+                </RelationWrapper>
+                <Name>상현</Name>
+              </NameWrapper>
+              <NameWrapper>
+                <Name>유경석 · 이주희</Name>
+                <RelationWrapper>
+                  <Relation>의</Relation>
+                  <Relation marginLeft={6}>딸</Relation>
+                </RelationWrapper>
+                <Name>가연</Name>
+              </NameWrapper>
+            </>
+          )}
         </SecondWrapper>
       )}
     </Wrapper>

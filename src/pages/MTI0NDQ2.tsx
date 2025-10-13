@@ -16,7 +16,7 @@ const Home2 = () => {
         <>
           <Title />
           <Summary />
-          <Greeting visibleRelation />
+          <Greeting visibleRelation up />
           <Gallery />
           <Schedule visibleDday />
           <Location mapType="naver" />
