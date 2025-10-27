@@ -218,7 +218,8 @@ const Location = ({ mapType }: LocationProps) => {
 
         <ButtonStyled
           href={
-            'https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,494574,1121498&rt1=&rt2=%EB%A1%9C%EC%96%84%ED%8C%8C%ED%81%AC%EC%BB%A8%EB%B2%A4%EC%85%98&rtIds=,&rtTypes=,'
+            // 'https://map.kakao.com/?map_type=TYPE_MAP&itemId=1274388923&target=car&urlX=510192&urlY=1133430&urlLevel=3'
+            'https://kko.kakao.com/yvFcuGO7Xw'
           }
           target="_blank"
           rel="noopener noreferrer"
@@ -231,7 +232,11 @@ const Location = ({ mapType }: LocationProps) => {
           />
           카카오맵
         </ButtonStyled>
-        <ButtonStyled>
+        <ButtonStyled
+          href="https://poi.tmobiweb.com/app/share/position?contents=cGtleT0xMTQwOTAyMzAxJnBvaUlkPTExNDA5MDIzJm5hdlNlcT0xJnR5cGU9MiZwb2lOYW1lPUw2NSVFRCU5OCVCOCVFRCU4NSU5NCVFQyU5QiVBOCVFQiU5NCVBOSVFQyVCQiVBOCVFQiVCMiVBNCVFQyU4NSU5OCZjZW50ZXJYPTQ1NzM3NDMmY2VudGVyWT0xMzUyNzcxJnRpbWU9MjAyNSVFQiU4NSU4NCsxMCVFQyU5QiU5NCsyNyVFQyU5RCVCQyswOCUzQTM1JnRlbD0wMi0yMTg0LTQ1MDAmYWRkcj0lRUMlODQlOUMlRUMlOUElQjgrJUVCJThGJTk5JUVCJThDJTgwJUVCJUFDJUI4JUVBJUI1JUFDKyVFQyU5OSU5NSVFQyU4MiVCMCVFQiVBMSU5QysyMDA%3D&tailParam=%7B%22reqType%22:%221100%22,%22reqMode%22:%221100%22,%22extra%22:%22112%22%7D"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Icon
             src={`${nextConfig.basePath}/images/raws/tmap.jpeg`}
             alt="tmap"
