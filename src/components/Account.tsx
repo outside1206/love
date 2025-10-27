@@ -56,8 +56,8 @@ const Account = () => {
           accountHolder="윤춘화"
         />
         <AccountData
-          bankName="하나"
-          accountNumber="37191060498807"
+          bankName="카카오뱅크"
+          accountNumber="3333043625408"
           accountHolder="변상현"
         />
       </AccountList>
@@ -74,8 +74,8 @@ const Account = () => {
           accountHolder="이주희"
         />
         <AccountData
-          bankName="하나"
-          accountNumber="37191062547107"
+          bankName="카카오뱅크"
+          accountNumber="3333043271120"
           accountHolder="유가연"
         />
       </AccountList>
