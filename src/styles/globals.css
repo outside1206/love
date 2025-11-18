@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: 'Pretendard';
+  src: url('https://d3p6olud8sihz4.cloudfront.net/Pretendard-Bold.otf')
+    format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Anek Bangla Expanded';
   src: url('https://d3p6olud8sihz4.cloudfront.net/AnekBangla_Expanded-Regular.ttf')
     format('truetype');
