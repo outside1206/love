@@ -145,13 +145,18 @@ const InfoDetail = styled.div`
   text-align: left;
 `
 
-const Text = styled.span<{ isTip?: boolean }>`
+const Text = styled.span<{ isTip?: boolean; marginTop?: number }>`
   color: white;
   ${({ isTip }) => (isTip ? 'font-size: 10px;' : '')}
 `
 
 const Highlight = styled.span`
   color: #d3727b;
+`
+
+const InfoWrapper = styled.div`
+  display: flex;
+  margin-bottom: 5px;
 `
 
 const Link = styled.div`
@@ -161,7 +166,6 @@ const Link = styled.div`
   text-decoration: underline;
 
   gap: 5px;
-  margin-top: 4px;
 `
 
 const basePath = nextConfig.basePath ?? ''
@@ -250,30 +254,46 @@ const Location = ({ mapType }: LocationProps) => {
         <Row>
           <Label>지하철</Label>
           <InfoDetail>
-            <Text>1호선 청량리역 </Text>
-            <Highlight>5번 출구</Highlight>
-            <Text> 바로 앞</Text>
-            <br />
-            <Text>경의중앙선/수인분당선/경춘선 청량리역 </Text>
-            <Highlight>1번 출구</Highlight>
-            <Text> 바로 앞</Text>
-            <br />
-            <Link
-              onClick={() => {
-                window.open(
-                  'https://blog.naver.com/dayul0421/223829006004',
-                  '_blank',
-                )
-              }}
-            >
-              <Image
-                src={`${basePath}/images/raws/triangle.png`}
-                alt="title"
-                width={8}
-                height={8}
-              />
-              <Text>출구에서 나온 후 웨딩홀 까지 가는 길 자세히 보기</Text>
-            </Link>
+            <InfoWrapper>
+              <Text>1호선 청량리역 </Text>
+              <Highlight>5번 출구</Highlight>
+              <Text> 바로 앞</Text>
+            </InfoWrapper>
+            <InfoWrapper>
+              <Link
+                onClick={() => {
+                  window.open('/subway-exit-5', '_blank')
+                }}
+              >
+                <Image
+                  src={`${basePath}/images/raws/triangle.png`}
+                  alt="title"
+                  width={8}
+                  height={8}
+                />
+                <Text>5번 출구에서 예식장 가는 길 자세히 보기</Text>
+              </Link>
+            </InfoWrapper>
+            <InfoWrapper>
+              <Text>경의중앙선/수인분당선/경춘선 청량리역 </Text>
+              <Highlight>1번 출구</Highlight>
+              <Text> 바로 앞</Text>
+            </InfoWrapper>
+            <InfoWrapper>
+              <Link
+                onClick={() => {
+                  window.open('/subway-exit-1', '_blank')
+                }}
+              >
+                <Image
+                  src={`${basePath}/images/raws/triangle.png`}
+                  alt="title"
+                  width={8}
+                  height={8}
+                />
+                <Text>1번 출구에서 예식장 가는 길 자세히 보기</Text>
+              </Link>
+            </InfoWrapper>
           </InfoDetail>
         </Row>
         <Row>
@@ -291,51 +311,10 @@ const Location = ({ mapType }: LocationProps) => {
             </Text>
             <br />
             <Text>전용 지하 주차장 3층, 4층 주차</Text>
-
-            <Link
-              onClick={() => {
-                window.open(
-                  'https://blog.naver.com/rohansfather_/223507143942',
-                  '_blank',
-                )
-              }}
-            >
-              <Image
-                src={`${basePath}/images/raws/triangle.png`}
-                alt="title"
-                width={8}
-                height={8}
-              />
-              <Text>중랑교(시조사 삼거리) 방향에서 올 경우</Text>
-            </Link>
-            <Link
-              onClick={() => {
-                window.open(
-                  'https://blog.naver.com/rohansfather_/223507143942',
-                  '_blank',
-                )
-              }}
-            >
-              <Image
-                src={`${basePath}/images/raws/triangle.png`}
-                alt="title"
-                width={8}
-                height={8}
-              />
-              <Text>광화문, 종로, 홍릉수목원 방향에서 올 경우</Text>
-            </Link>
-            <Row isTip>
-              <Label isTip>TIP</Label>
-              <Text isTip>주차구역 E4, F4 주차하면 이동이 편리해요</Text>
-              <br />
-              <Text isTip>
-                연회장 입구 태블릿에 번호 등록시 1시간 30분 무료 주차 가능해요
-              </Text>
-              <br />
-              <Text isTip>
-                사전 정산은 지하 주차장 3층, 4층 / 출차시 가능해요
-              </Text>
-            </Row>
+            <br />
+            <Text>• 중랑교(시조사 삼거리) 방향에서 올 경우</Text>
+            <br />
+            <Text>• 광화문, 종로, 홍릉수목원 방향에서 올 경우</Text>
           </InfoDetail>
         </Row>
         <Row>
