@@ -169,6 +169,7 @@ const Link = styled.div`
 `
 
 const basePath = nextConfig.basePath ?? ''
+const isProd = process.env.NODE_ENV === 'production'
 
 const Location = ({ mapType }: LocationProps) => {
   const [isClient, setIsClient] = useState(false)
@@ -262,7 +263,10 @@ const Location = ({ mapType }: LocationProps) => {
             <InfoWrapper>
               <Link
                 onClick={() => {
-                  window.open('/subway-exit-5', '_blank')
+                  window.open(
+                    `${isProd ? '/love' : ''}/subway-exit-5`,
+                    '_blank',
+                  )
                 }}
               >
                 <Image
@@ -282,7 +286,10 @@ const Location = ({ mapType }: LocationProps) => {
             <InfoWrapper>
               <Link
                 onClick={() => {
-                  window.open('/subway-exit-1', '_blank')
+                  window.open(
+                    `${isProd ? '/love' : ''}/subway-exit-1`,
+                    '_blank',
+                  )
                 }}
               >
                 <Image
