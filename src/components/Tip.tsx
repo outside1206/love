@@ -31,7 +31,7 @@ const Tip = () => {
       </Text>
 
       <Text>예식이 진행되는 컨벤션 홀 입구에 신랑, 신부와 함께</Text>
-      <Text>사진일 찍는 듯한 거울 포토존이 마련되어 있습니다.</Text>
+      <Text>사진을 찍는 듯한 거울 포토존이 마련되어 있습니다.</Text>
       <Text>로비에서 신랑, 신부와 반갑게 인사한 뒤</Text>
       <Text marginBottom={marginBottom}>
         포토존에서도 활짝 밝은 사진 남겨주세요.
