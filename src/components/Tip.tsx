@@ -48,7 +48,7 @@ const Tip = () => {
           setAtmOpen(true)
         }}
       >
-        ATM은 에스컬레이터 올라오는 길에 있습니다.
+        ATM은 에스컬레이터 올라오는 길에 있습니다.(클릭)
       </Text>
 
       <Text>주차구역 E4, F4 주차하면 이동이 편리해요.</Text>
